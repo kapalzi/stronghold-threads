@@ -11,5 +11,4 @@ public:
     void workOnProduct();
     void deliverProduct();
 
-
 };

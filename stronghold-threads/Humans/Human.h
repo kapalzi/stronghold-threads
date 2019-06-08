@@ -1,24 +1,14 @@
 #include <string>
 #include <thread>
+#include "../Stronghold.hpp"
 
+#pragma once
 using namespace std;
 
 class Human: public thread{
 protected:
-	/*
-	enum occupation{
-		LUMBERJACK
-		BLACKSMITH
-		BOWMAKER
-		MINER
-		SOLDIER
-		FARMER
-		BAKER
-		MILLER
-		NONE
-	};
-	*/
-	string occupation;
+
+	class
 	int foodIndex;
 public:
 
