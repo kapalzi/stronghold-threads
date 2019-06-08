@@ -6,7 +6,8 @@ Miner::Miner() {
 }
 
 void Miner::startWorking() {
-    while(1) {
+    
+    while(this->stronghold->workingMiners[this->workerId]) {
         this -> goForResources();
         this -> workOnProduct();
         this -> deliverProduct();
