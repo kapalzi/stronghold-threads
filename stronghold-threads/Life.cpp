@@ -16,10 +16,12 @@ void Life::startLife() {
     //miners
     for (int i = 0; i < WORKERSCOUNT; ++i) {
         this->stronghold->workingMiners[i] = true;
+        this->stronghold->workingLumberjacks[i] = true;
         this->stronghold->miners[i] = thread([=] {this->startMiner(i);});
+        this->stronghold->lumberjacks[i] = thread([=] {this->startLumberjack(i);});
     }
     
-    //tutaj wszuscu pracownicy po kolei
+   
 }
 
 void Life::startMiner(int id) {

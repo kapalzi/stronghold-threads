@@ -43,3 +43,7 @@ bool Warehouse::canGetFlour() {
 void Warehouse::storeIron(int amount) {
     ironCapacity+=amount;
 }
+void Warehouse::storeWood(int amount) {
+    woodCapacity+=amount;
+}
+

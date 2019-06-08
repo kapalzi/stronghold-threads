@@ -11,6 +11,7 @@
 #include "Life.hpp"
 #include "Stronghold.hpp"
 #include "Humans/Miner.h"
+#include "Humans/Lumberjack.hpp"
 
 
 class Life {
@@ -22,4 +23,5 @@ public:
     Life();
     void startLife();
     void startMiner(int id);
+    void startLumberjack(int id);
 };
