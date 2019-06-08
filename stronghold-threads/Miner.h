@@ -5,4 +5,4 @@ public:
     void goForResources();
     void workOnProduct();
     void deliverProduct();
-}
+};

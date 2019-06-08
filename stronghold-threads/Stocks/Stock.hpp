@@ -34,8 +34,3 @@ struct Armory: public Stock {
     int swordsCapacity;
     int swordsMaxCapacity;
 };
-
-struct Granary: public Stock {
-    int breadCapacity;
-    int breadMaxCapacity;
-};

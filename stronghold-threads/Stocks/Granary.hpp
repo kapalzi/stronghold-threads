@@ -6,9 +6,9 @@
 //  Copyright © 2019 Krzysztof Kapała. All rights reserved.
 //
 
-#ifndef Granary_hpp
-#define Granary_hpp
+#include "Stock.hpp"
 
-#include <stdio.h>
-
-#endif /* Granary_hpp */
+struct Granary: public Stock {
+    int breadCapacity;
+    int breadMaxCapacity;
+};
