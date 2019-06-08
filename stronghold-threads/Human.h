@@ -28,4 +28,9 @@ public:
 	int getfoodIndex();
 	void setOccupation(string);
 	string getOccupation();
+	void startWorking();
+	void goForResources();
+	void workOnProduct();
+	void deliverProduct();
+	void stopWorking();
 };
