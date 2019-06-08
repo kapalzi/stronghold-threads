@@ -12,6 +12,8 @@
 		E20D855A22AC06090053656A /* Granary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20D855822AC06090053656A /* Granary.cpp */; };
 		E20D855D22AC06190053656A /* Armory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20D855B22AC06190053656A /* Armory.cpp */; };
 		E20D856022AC062C0053656A /* Warehouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20D855E22AC062C0053656A /* Warehouse.cpp */; };
+		E20D856622AC07AA0053656A /* Miner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20D856322AC07A90053656A /* Miner.cpp */; };
+		E20D856722AC07AA0053656A /* Baker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20D856522AC07A90053656A /* Baker.cpp */; };
 		E216B251229982D200110D98 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E216B250229982D200110D98 /* main.cpp */; };
 		E29227A722ABCA4600391C29 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A422ABCA4600391C29 /* Human.cpp */; };
 		E29227A822ABCA4600391C29 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A522ABCA4600391C29 /* Production.cpp */; };
@@ -42,6 +44,9 @@
 		E20D855C22AC06190053656A /* Armory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Armory.hpp; sourceTree = "<group>"; };
 		E20D855E22AC062C0053656A /* Warehouse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Warehouse.cpp; sourceTree = "<group>"; };
 		E20D855F22AC062C0053656A /* Warehouse.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Warehouse.hpp; sourceTree = "<group>"; };
+		E20D856322AC07A90053656A /* Miner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Miner.cpp; path = "stronghold-threads/Miner.cpp"; sourceTree = SOURCE_ROOT; };
+		E20D856422AC07A90053656A /* Miner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Miner.h; path = "stronghold-threads/Miner.h"; sourceTree = SOURCE_ROOT; };
+		E20D856522AC07A90053656A /* Baker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Baker.cpp; path = "stronghold-threads/Baker.cpp"; sourceTree = SOURCE_ROOT; };
 		E216B24D229982D200110D98 /* stronghold-threads */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "stronghold-threads"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E216B250229982D200110D98 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E29227A322ABCA4600391C29 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
@@ -84,6 +89,9 @@
 				E29227A422ABCA4600391C29 /* Human.cpp */,
 				E29227A322ABCA4600391C29 /* Human.h */,
 				E20D855522ABFDFD0053656A /* Baker.h */,
+				E20D856522AC07A90053656A /* Baker.cpp */,
+				E20D856322AC07A90053656A /* Miner.cpp */,
+				E20D856422AC07A90053656A /* Miner.h */,
 			);
 			path = Humans;
 			sourceTree = "<group>";
@@ -179,8 +187,10 @@
 				E20D855322ABEFDD0053656A /* Stock.cpp in Sources */,
 				E29227A822ABCA4600391C29 /* Production.cpp in Sources */,
 				E216B251229982D200110D98 /* main.cpp in Sources */,
+				E20D856722AC07AA0053656A /* Baker.cpp in Sources */,
 				E29227A722ABCA4600391C29 /* Human.cpp in Sources */,
 				E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */,
+				E20D856622AC07AA0053656A /* Miner.cpp in Sources */,
 				E20D855D22AC06190053656A /* Armory.cpp in Sources */,
 				E20D855722ABFDFE0053656A /* Helper.cpp in Sources */,
 				E20D855A22AC06090053656A /* Granary.cpp in Sources */,
