@@ -10,6 +10,7 @@
 		E216B251229982D200110D98 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E216B250229982D200110D98 /* main.cpp */; };
 		E29227A722ABCA4600391C29 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A422ABCA4600391C29 /* Human.cpp */; };
 		E29227A822ABCA4600391C29 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A522ABCA4600391C29 /* Production.cpp */; };
+		E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A922ABDAC600391C29 /* Stronghold.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		E29227A422ABCA4600391C29 /* Human.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Human.cpp; sourceTree = "<group>"; };
 		E29227A522ABCA4600391C29 /* Production.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Production.cpp; sourceTree = "<group>"; };
 		E29227A622ABCA4600391C29 /* Production.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Production.h; sourceTree = "<group>"; };
+		E29227A922ABDAC600391C29 /* Stronghold.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Stronghold.cpp; sourceTree = "<group>"; };
+		E29227AA22ABDAC600391C29 /* Stronghold.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stronghold.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				E29227A322ABCA4600391C29 /* Human.h */,
 				E29227A522ABCA4600391C29 /* Production.cpp */,
 				E29227A622ABCA4600391C29 /* Production.h */,
+				E29227A922ABDAC600391C29 /* Stronghold.cpp */,
+				E29227AA22ABDAC600391C29 /* Stronghold.hpp */,
 			);
 			path = "stronghold-threads";
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				E29227A822ABCA4600391C29 /* Production.cpp in Sources */,
 				E216B251229982D200110D98 /* main.cpp in Sources */,
 				E29227A722ABCA4600391C29 /* Human.cpp in Sources */,
+				E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
