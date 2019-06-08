@@ -39,7 +39,7 @@ void Human::goForResources()
 {
 	signed int time = Helper::getRandomTime();
 	std::this_thread::sleep_for(chrono::milliseconds(time));
-
+    
 }
 
 void Human::workOnProduct()

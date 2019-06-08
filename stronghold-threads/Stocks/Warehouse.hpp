@@ -27,4 +27,6 @@ struct Warehouse: public Stock {
     bool canStoreFlour(int amount);
     bool canGetFlour();
     
+    void storeIron(int amount);
+    
 };

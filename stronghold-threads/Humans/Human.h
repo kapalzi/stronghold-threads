@@ -15,7 +15,7 @@ public:
 
 	Human();
 	~Human();
-//    Stronghold *currentStronghold;
+//    Stronghold *stronghold;
     int workerId;
 	void setfoodIndex(int);
 	int getfoodIndex();

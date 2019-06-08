@@ -8,10 +8,10 @@
 #pragma once
 #include <mutex>
 
-struct Stock {
+struct Stock : std::mutex {
     int maxCapacity;
     int currentCapacity;
-    std::mutex mtx;
+    
     
     Stock();
     bool canStore(int amount, int current, int max);

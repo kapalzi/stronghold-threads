@@ -17,7 +17,20 @@
 using namespace std;
 class  Miner;
 class Stronghold{
-private:
+    
+public:
+    
+    Stronghold();
+    ~Stronghold();
+    
+    atomic_bool workingLumberjacks[WORKERSCOUNT];
+    atomic_bool workingFarmers[WORKERSCOUNT];
+    atomic_bool workingMiller[WORKERSCOUNT];
+    atomic_bool workingBakers[WORKERSCOUNT];
+    atomic_bool workingBlacksmiths[WORKERSCOUNT];
+    atomic_bool workingBowMakers[WORKERSCOUNT];
+    atomic_bool workingMiners[WORKERSCOUNT];
+    
     thread lumberjacks[WORKERSCOUNT];
     thread farmers[WORKERSCOUNT];
     thread miller[WORKERSCOUNT];
@@ -25,19 +38,6 @@ private:
     thread blacksmiths[WORKERSCOUNT];
     thread bowMakers[WORKERSCOUNT];
     thread miners[WORKERSCOUNT];
-    
-public:
-    
-    Stronghold();
-    ~Stronghold();
-    
-//    atomic_bool workingLumberjacks[WORKERSCOUNT];
-//    atomic_bool workingFarmers[WORKERSCOUNT];
-//    atomic_bool workingMiller[WORKERSCOUNT];
-//    atomic_bool workingBakers[WORKERSCOUNT];
-//    atomic_bool workingBlacksmiths[WORKERSCOUNT];
-//    atomic_bool workingBowMakers[WORKERSCOUNT];
-//    atomic_bool workingMiners[WORKERSCOUNT];
     
     Warehouse warehouse;
     Armory armory;
@@ -48,6 +48,7 @@ public:
     void initWarehouse();
     void initArmory();
     void initPopulation();
-    void startLife();
-    void startMiner(int id);
+//
+//    void startLife();
+//    void startMiner(int id);
 };

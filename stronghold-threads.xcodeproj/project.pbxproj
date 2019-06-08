@@ -15,6 +15,7 @@
 		E216B251229982D200110D98 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E216B250229982D200110D98 /* main.cpp */; };
 		E231937122AC1872008B0F19 /* Miner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231936E22AC1872008B0F19 /* Miner.cpp */; };
 		E231937222AC1872008B0F19 /* Baker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231937022AC1872008B0F19 /* Baker.cpp */; };
+		E231937722AC2BE2008B0F19 /* Life.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231937522AC2BE2008B0F19 /* Life.cpp */; };
 		E29227A722ABCA4600391C29 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A422ABCA4600391C29 /* Human.cpp */; };
 		E29227A822ABCA4600391C29 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A522ABCA4600391C29 /* Production.cpp */; };
 		E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A922ABDAC600391C29 /* Stronghold.cpp */; };
@@ -49,6 +50,8 @@
 		E231936E22AC1872008B0F19 /* Miner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Miner.cpp; sourceTree = "<group>"; };
 		E231936F22AC1872008B0F19 /* Miner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Miner.h; sourceTree = "<group>"; };
 		E231937022AC1872008B0F19 /* Baker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Baker.cpp; sourceTree = "<group>"; };
+		E231937522AC2BE2008B0F19 /* Life.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Life.cpp; sourceTree = "<group>"; };
+		E231937622AC2BE2008B0F19 /* Life.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Life.hpp; sourceTree = "<group>"; };
 		E29227A322ABCA4600391C29 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
 		E29227A422ABCA4600391C29 /* Human.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Human.cpp; sourceTree = "<group>"; };
 		E29227A522ABCA4600391C29 /* Production.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Production.cpp; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				E29227A622ABCA4600391C29 /* Production.h */,
 				E29227A922ABDAC600391C29 /* Stronghold.cpp */,
 				E29227AA22ABDAC600391C29 /* Stronghold.hpp */,
+				E231937522AC2BE2008B0F19 /* Life.cpp */,
+				E231937622AC2BE2008B0F19 /* Life.hpp */,
 				E20D855422ABFDFD0053656A /* Helper.cpp */,
 				E20D855622ABFDFE0053656A /* Helper.h */,
 				E20D856222AC067A0053656A /* Humans */,
@@ -193,6 +198,7 @@
 				E231937122AC1872008B0F19 /* Miner.cpp in Sources */,
 				E20D855D22AC06190053656A /* Armory.cpp in Sources */,
 				E20D855722ABFDFE0053656A /* Helper.cpp in Sources */,
+				E231937722AC2BE2008B0F19 /* Life.cpp in Sources */,
 				E20D855A22AC06090053656A /* Granary.cpp in Sources */,
 				E20D856022AC062C0053656A /* Warehouse.cpp in Sources */,
 			);

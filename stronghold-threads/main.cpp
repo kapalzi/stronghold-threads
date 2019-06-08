@@ -7,9 +7,19 @@
 //
 
 #include <iostream>
-
+#include "Life.hpp"
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
+    
+    Life *life = new Life();
+    life->startLife();
+    
+    
+    while(1) {
+        if (std::cin.get() == 's') {
+            
+        }
+    }
     return 0;
 }

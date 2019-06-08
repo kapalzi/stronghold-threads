@@ -39,3 +39,7 @@ bool Warehouse::canStoreFlour(int amount) {
 bool Warehouse::canGetFlour() {
     return Stock::canGet(this->flourCapacity);
 }
+
+void Warehouse::storeIron(int amount) {
+    ironCapacity+=amount;
+}

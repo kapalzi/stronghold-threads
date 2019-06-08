@@ -9,7 +9,7 @@
 #include "Stronghold.hpp"
 
 Stronghold::Stronghold() {
-
+    this->initWorld();
 }
 
 Stronghold::~Stronghold() {
@@ -21,7 +21,7 @@ void Stronghold::initWorld() {
     this->initWarehouse();
     this->initArmory();
     this->initPopulation();
-    this->startLife();
+//    this->startLife();
 }
 
 void Stronghold::initGranary() {
@@ -52,20 +52,18 @@ void Stronghold::initPopulation(){
     
 }
 
-void Stronghold::startLife() {
-    //miners
-    for (int i = 0; i < WORKERSCOUNT; ++i) {
-        this->miners[i] = thread([=] {this->startMiner(i);});
-//        this->workingMiners[i] = true;
-    }
-}
+//void Life::startLife() {
+//    //miners
+//    for (int i = 0; i < WORKERSCOUNT; ++i) {
+//        this->stronghold->miners[i] = thread([=] {this->startMiner(i);});
+//        //        this->workingMiners[i] = true;
+//    }
+//}
+//
+//void Life::startMiner(int id) {
+//    Miner *miner = new Miner();
+//    miner->workerId = id;
+//}
 
-void Stronghold::startMiner(int id) {
-    Miner *miner = new Miner();
-//    miner->currentStronghold = this;
-    miner->workerId = id;
-    
-    
-}
 
 
