@@ -1,8 +1,9 @@
 #include <string>
+#include <thread>
 
 using namespace std;
 
-class Human{
+class Human: public thread{
 protected:
 	/*
 	enum occupation{

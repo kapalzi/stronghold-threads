@@ -1,4 +1,9 @@
 #include "Human.h"
+#include "Helper.cpp"
+#include <thread>
+#include <chrono>
+#include <ctime>
+#include <iostream>
 
 Human::Human()
 {
@@ -34,5 +39,24 @@ void Human::startWorking()
 		this -> workOnProduct();
 		this -> deliverProduct();
 	}
+}
+
+void Human::goForResources()
+{
+	float time = Helper::getRandomTime();
+	std::this_thread::sleep_for(chrono::milliseconds(time));
+
+}
+
+void Human::workOnProduct()
+{
+	float time = Helper::getRandomTime();
+	std::this_thread::sleep_for(std::chrono::milliseconds(time));
+}
+
+void Human::deliverProduct()
+{
+	float time = Helper::getRandomTime();
+	std::this_thread::sleep_for(std::chrono::milliseconds(time));
 }
 
