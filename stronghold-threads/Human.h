@@ -3,7 +3,7 @@
 using namespace std;
 
 class Human{
-private:
+protected:
 	/*
 	enum occupation{
 		LUMBERJACK
