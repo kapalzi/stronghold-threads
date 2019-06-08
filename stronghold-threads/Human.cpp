@@ -1,9 +1,7 @@
 #include "Human.h"
-#include "Helper.cpp"
 #include <thread>
-#include <chrono>
-#include <ctime>
 #include <iostream>
+#include "Helper.h"
 
 Human::Human()
 {
@@ -43,20 +41,20 @@ void Human::startWorking()
 
 void Human::goForResources()
 {
-	float time = Helper::getRandomTime();
+	signed int time = Helper::getRandomTime();
 	std::this_thread::sleep_for(chrono::milliseconds(time));
 
 }
 
 void Human::workOnProduct()
 {
-	float time = Helper::getRandomTime();
+	signed int time = Helper::getRandomTime();
 	std::this_thread::sleep_for(std::chrono::milliseconds(time));
 }
 
 void Human::deliverProduct()
 {
-	float time = Helper::getRandomTime();
+	signed int time = Helper::getRandomTime();
 	std::this_thread::sleep_for(std::chrono::milliseconds(time));
 }
 

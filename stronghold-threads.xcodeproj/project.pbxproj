@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E20D855322ABEFDD0053656A /* Stock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20D855122ABEFDD0053656A /* Stock.cpp */; };
+		E20D855722ABFDFE0053656A /* Helper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E20D855422ABFDFD0053656A /* Helper.cpp */; };
 		E216B251229982D200110D98 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E216B250229982D200110D98 /* main.cpp */; };
 		E29227A722ABCA4600391C29 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A422ABCA4600391C29 /* Human.cpp */; };
 		E29227A822ABCA4600391C29 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A522ABCA4600391C29 /* Production.cpp */; };
@@ -26,6 +28,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E20D855122ABEFDD0053656A /* Stock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Stock.cpp; sourceTree = "<group>"; };
+		E20D855222ABEFDD0053656A /* Stock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stock.hpp; sourceTree = "<group>"; };
+		E20D855422ABFDFD0053656A /* Helper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Helper.cpp; sourceTree = "<group>"; };
+		E20D855522ABFDFD0053656A /* Baker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Baker.h; sourceTree = "<group>"; };
+		E20D855622ABFDFE0053656A /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		E216B24D229982D200110D98 /* stronghold-threads */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "stronghold-threads"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E216B250229982D200110D98 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E29227A322ABCA4600391C29 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
@@ -73,6 +80,11 @@
 				E29227A622ABCA4600391C29 /* Production.h */,
 				E29227A922ABDAC600391C29 /* Stronghold.cpp */,
 				E29227AA22ABDAC600391C29 /* Stronghold.hpp */,
+				E20D855122ABEFDD0053656A /* Stock.cpp */,
+				E20D855222ABEFDD0053656A /* Stock.hpp */,
+				E20D855522ABFDFD0053656A /* Baker.h */,
+				E20D855422ABFDFD0053656A /* Helper.cpp */,
+				E20D855622ABFDFE0053656A /* Helper.h */,
 			);
 			path = "stronghold-threads";
 			sourceTree = "<group>";
@@ -133,10 +145,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20D855322ABEFDD0053656A /* Stock.cpp in Sources */,
 				E29227A822ABCA4600391C29 /* Production.cpp in Sources */,
 				E216B251229982D200110D98 /* main.cpp in Sources */,
 				E29227A722ABCA4600391C29 /* Human.cpp in Sources */,
 				E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */,
+				E20D855722ABFDFE0053656A /* Helper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

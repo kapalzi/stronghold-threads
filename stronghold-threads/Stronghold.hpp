@@ -8,6 +8,7 @@
 
 #include <string>
 #include <thread>
+#include "Stock.hpp"
 #define WORKERSCOUNT 20
 
 using namespace std;
@@ -33,9 +34,13 @@ public:
     atomic_bool workingBlacksmiths[WORKERSCOUNT];
     atomic_bool workingBowMakers[WORKERSCOUNT];
     
+    Stock warehouse;
+    Stock armory;
+    Stock granary;
+    
     void initWorld();
     void initGranary();
-    void initStock();
+    void initWarehouse();
     void initArmory();
     void initPopulation();
     void startLife();
