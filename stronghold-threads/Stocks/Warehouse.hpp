@@ -6,9 +6,25 @@
 //  Copyright © 2019 Krzysztof Kapała. All rights reserved.
 //
 
-#ifndef Warehouse_hpp
-#define Warehouse_hpp
+#include "Stock.hpp"
 
-#include <stdio.h>
-
-#endif /* Warehouse_hpp */
+struct Warehouse: public Stock {
+    int woodCapacity;
+    int woodMaxCapacity;
+    int wheatCapacity;
+    int wheatMaxCapacity;
+    int flourCapacity;
+    int flourMaxCapacity;
+    int ironCapacity;
+    int ironMaxCapacity;
+    
+    bool canStoreWood(int amount);
+    bool canGetWood();
+    bool canStoreWheat(int amount);
+    bool canGetWheat();
+    bool canStoreIron(int amount);
+    bool canGetIron();
+    bool canStoreFlour(int amount);
+    bool canGetFlour();
+    
+};

@@ -30,8 +30,17 @@ void Stronghold::initGranary() {
 }
 
 void Stronghold::initWarehouse() {
-    this->warehouse.maxCapacity = 10000;
-    this->warehouse.currentCapacity = 0;
+    this->warehouse.woodCapacity = 0;
+    this->warehouse.woodMaxCapacity = 2000;
+    
+    this->warehouse.flourCapacity = 0;
+    this->warehouse.flourMaxCapacity = 2000;
+    
+    this->warehouse.wheatCapacity = 0;
+    this->warehouse.wheatMaxCapacity = 2000;
+    
+    this->warehouse.ironCapacity = 0;
+    this->warehouse.ironMaxCapacity = 2000;
 }
 
 void Stronghold::initArmory() {

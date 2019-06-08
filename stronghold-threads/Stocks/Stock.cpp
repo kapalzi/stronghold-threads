@@ -10,8 +10,17 @@
 
 Stock::Stock(){}
 
-bool Stock::canStore(int amount) {
-    if (currentCapacity + amount <= maxCapacity) {
+bool Stock::canStore(int amount, int current, int max) {
+    if (current + amount <= max) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool Stock::canGet(int current) {
+    if (current >= 1) {
         return true;
     }
     else {

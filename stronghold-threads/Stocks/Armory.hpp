@@ -6,9 +6,11 @@
 //  Copyright © 2019 Krzysztof Kapała. All rights reserved.
 //
 
-#ifndef Armory_hpp
-#define Armory_hpp
+#include "Stock.hpp"
 
-#include <stdio.h>
-
-#endif /* Armory_hpp */
+struct Armory: public Stock {
+    int bowsCapacity;
+    int bowsMaxCapacity;
+    int swordsCapacity;
+    int swordsMaxCapacity;
+};

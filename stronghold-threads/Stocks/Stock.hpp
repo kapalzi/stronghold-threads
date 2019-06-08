@@ -7,6 +7,7 @@
 //
 
 #include <mutex>
+#pragma once
 
 struct Stock {
     int maxCapacity;
@@ -14,23 +15,12 @@ struct Stock {
     std::mutex mtx;
     
     Stock();
-    bool canStore(int amount);
+    bool canStore(int amount, int current, int max);
+    bool canGet(int current);
 };
 
-struct Warehouse: public Stock {
-    int woodCapacity;
-    int woodMaxCapacity;
-    int wheatCapacity;
-    int wheatMaxCapacity;
-    int flourCapacity;
-    int flourMaxCapacity;
-    int ironCapacity;
-    int ironMaxCapacity;
-};
 
-struct Armory: public Stock {
-    int bowsCapacity;
-    int bowsMaxCapacity;
-    int swordsCapacity;
-    int swordsMaxCapacity;
-};
+
+
+
+
