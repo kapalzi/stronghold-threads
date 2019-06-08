@@ -1,10 +1,11 @@
-#include "production.h"
+#include "Production.h"
 #include <thread>
 #include <mutex>
 #include <ctime>
 #include <cstdlib>
 #include <stdio.h>
 #include <time.h>
+
 Production::Production()
 {
 
@@ -30,12 +31,13 @@ void Production::work()
 	int numSeconds = 10;
 	int workRate = 10;
 	clock_t thisTime = clock();
-	clock_t lasTime = thisTime;
+	clock_t lastTime = thisTime;
+    double timeCounter = 0;
 	while(1)
 	{
-		thisTime = clok();
-		timeCounter += (double)(thiTime - lastTime);
-		lasTime = thisTime;
+		thisTime = clock();
+		timeCounter += (double)(thisTime - lastTime);
+		lastTime = thisTime;
 
 		if(timeCounter > (double)(numSeconds * CLOCKS_PER_SEC))
 		{

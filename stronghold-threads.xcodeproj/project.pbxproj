@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E216B251229982D200110D98 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E216B250229982D200110D98 /* main.cpp */; };
+		E29227A722ABCA4600391C29 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A422ABCA4600391C29 /* Human.cpp */; };
+		E29227A822ABCA4600391C29 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A522ABCA4600391C29 /* Production.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		E216B24D229982D200110D98 /* stronghold-threads */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "stronghold-threads"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E216B250229982D200110D98 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E29227A322ABCA4600391C29 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
+		E29227A422ABCA4600391C29 /* Human.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Human.cpp; sourceTree = "<group>"; };
+		E29227A522ABCA4600391C29 /* Production.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Production.cpp; sourceTree = "<group>"; };
+		E29227A622ABCA4600391C29 /* Production.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Production.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				E216B250229982D200110D98 /* main.cpp */,
+				E29227A422ABCA4600391C29 /* Human.cpp */,
+				E29227A322ABCA4600391C29 /* Human.h */,
+				E29227A522ABCA4600391C29 /* Production.cpp */,
+				E29227A622ABCA4600391C29 /* Production.h */,
 			);
 			path = "stronghold-threads";
 			sourceTree = "<group>";
@@ -118,7 +128,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E29227A822ABCA4600391C29 /* Production.cpp in Sources */,
 				E216B251229982D200110D98 /* main.cpp in Sources */,
+				E29227A722ABCA4600391C29 /* Human.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
