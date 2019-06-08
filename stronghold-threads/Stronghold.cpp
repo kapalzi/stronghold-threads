@@ -53,6 +53,18 @@ void Stronghold::initPopulation(){
 }
 
 void Stronghold::startLife() {
+    //miners
+    for (int i = 0; i < WORKERSCOUNT; ++i) {
+        this->miners[i] = thread([=] {this->startMiner(i);});
+//        this->workingMiners[i] = true;
+    }
+}
+
+void Stronghold::startMiner(int id) {
+    Miner *miner = new Miner();
+//    miner->currentStronghold = this;
+    miner->workerId = id;
+    
     
 }
 

@@ -1,4 +1,6 @@
+#pragma once
 #include "Human.h"
+//#include "../Headers.h"
 
 class Miner: public Human{
 public:
@@ -9,4 +11,5 @@ public:
     void goForResources();
     void workOnProduct();
     void deliverProduct();
+    void startWorking();
 };

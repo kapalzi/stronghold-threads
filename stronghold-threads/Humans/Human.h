@@ -1,20 +1,22 @@
-#include <string>
-#include <thread>
-#include "../Stronghold.hpp"
-
 #pragma once
+//#include "../Stronghold.hpp"
+#include <thread>
+#include <string>
 using namespace std;
+
+class Stronghold;
 
 class Human: public thread{
 protected:
 
-	class
+    
 	int foodIndex;
 public:
 
 	Human();
 	~Human();
-
+//    Stronghold *currentStronghold;
+    int workerId;
 	void setfoodIndex(int);
 	int getfoodIndex();
 	void setOccupation(string);

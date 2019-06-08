@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Helper.h"
 
+
 Human::Human()
 {
 
@@ -21,11 +22,6 @@ void Human::setfoodIndex(int x)
 int Human::getfoodIndex()
 {
 	return this -> foodIndex;
-}
-
-void Human::setOccupation(string x)
-{
-	this -> occupation = x;
 }
 
 void Human::startWorking()

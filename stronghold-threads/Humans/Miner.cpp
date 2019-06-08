@@ -1,7 +1,23 @@
 #include "Miner.h"
-#include "../Stocks/Warehouse.hpp"
 
 
+Miner::Miner() {
+    
+}
+
+void Miner::startWorking() {
+    
+    
+//    while(this->currentStronghold->workingMiners[this->workerId])
+//          workingMiners[this->workerId])
+    
+    while(1) // current time - get live time
+    {
+        this -> goForResources();
+        this -> workOnProduct();
+        this -> deliverProduct();
+    }
+}
 
 void Miner::goForResources()
 {
@@ -17,6 +33,7 @@ void Miner::workOnProduct()
 void Miner::deliverProduct()
 {
     Human:deliverProduct();
+    
     
 
 }
