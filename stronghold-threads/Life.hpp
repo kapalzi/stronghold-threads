@@ -36,5 +36,6 @@ public:
     void startBlacksmith(int id);
     void startRecruiter(int id);
     void startMiller(int id);
+    void startBaker(int id);
 
 };

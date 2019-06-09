@@ -24,7 +24,7 @@ void Recruiter::startWorking() {
         for (int i = 0; i<20; i++) {
             this->stronghold->workingBowMakers[i] = false;
             this->stronghold->workingMiners[i] = false;
-//            this->stronghold->workingBakers[i] = false;
+            this->stronghold->workingBakers[i] = false;
             this->stronghold->workingFarmers[i] = false;
             this->stronghold->workingLumberjacks[i] = false;
         }

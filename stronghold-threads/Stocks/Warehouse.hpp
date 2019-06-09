@@ -30,7 +30,10 @@ struct Warehouse: public Stock {
     void storeIron(int amount);
     void storeWood(int amount);
     void storeWheat(int amount);
+    void storeFlour(int amount);
     void getWood();
     void getIron();
+    void getWheat();
+    void getFlour();
     
 };
