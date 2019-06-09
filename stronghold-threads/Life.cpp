@@ -19,11 +19,13 @@ void Life::initLife() {
         this->stronghold->workingLumberjacks[i] = true;
         this->stronghold->workingFarmers[i] = true;
         this->stronghold->workingBowMakers[i] = true;
+        this->stronghold->workingBlacksmiths[i] = true;
         
         this->stronghold->miners[i] = thread([=] {this->startMiner(i);});
         this->stronghold->lumberjacks[i] = thread([=] {this->startLumberjack(i);});
         this->stronghold->farmers[i] = thread([=] {this->startFarmer(i);});
         this->stronghold->bowMakers[i] = thread([=] {this->startBowMaker(i);});
+        this->stronghold->blacksmiths[i] = thread([=] {this->startBlacksmith(i);});
     }
     this->startLife();
     //    thread recruiter = thread([=] {this->startRecruiter(0);});

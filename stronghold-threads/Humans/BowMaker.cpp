@@ -53,9 +53,9 @@ void BowMaker::deliverProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
     if (this->stronghold->armory.try_lock()) {
-        if (this->stronghold->armory.canStoreSwords(1)) {
-            this->stronghold->armory.storeSwords(1);
-            if (this->stronghold->armory.swordsCapacity >= 100) {
+        if (this->stronghold->armory.canStoreBows(1)) {
+            this->stronghold->armory.storeBows(1);
+            if (this->stronghold->armory.bowsCapacity >= 100) {
                 this->stronghold->armoryReady.notify_one();
             }
             

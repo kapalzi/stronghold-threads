@@ -54,3 +54,7 @@ void Warehouse::storeWheat(int amount) {
 void Warehouse::getWood() {
     woodCapacity--;
 }
+
+void Warehouse::getIron() {
+    ironCapacity--;
+}

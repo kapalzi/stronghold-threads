@@ -15,7 +15,7 @@
 #include "Humans/Farmer.hpp"
 #include "Humans/BowMaker.hpp"
 #include "Humans/Recruiter.hpp"
-
+#include "Humans/Blacksmith.hpp"
 
 class Life {
     

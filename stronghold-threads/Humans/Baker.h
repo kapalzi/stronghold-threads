@@ -1,16 +1,16 @@
 #pragma once
 #include "Human.h"
-//#include "../Headers.h"
+#include "../Stronghold.hpp"
 
 class Baker: public Human{
-private:
-
 public:
+    
     Baker();
     ~Baker();
-
+    
+    Stronghold *stronghold;
     void goForResources();
     void workOnProduct();
     void deliverProduct();
-
+    void startWorking();
 };
