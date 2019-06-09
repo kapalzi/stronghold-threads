@@ -12,3 +12,9 @@ double Helper::getRandomLiveTime(){
     float time = 60 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(120-60)));
     return time*1000;
 }
+
+double Helper::getPrintfTime(){
+    float time = 15;
+    return time*1000;
+}
+

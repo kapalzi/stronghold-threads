@@ -8,6 +8,7 @@
 
 #include "Life.hpp"
 #include <iostream>
+#include "Helper.h"
 
 Life::Life() {
     stronghold = new Stronghold();
@@ -100,6 +101,11 @@ void Life::startLife() {
                 this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
             }
         }
+    signed int time = Helper::getPrintfTime();
+    std::this_thread::sleep_for(chrono::milliseconds(time));
+    printf("Bows Count: %d \nWood Count: %d \nWheat Count: %d \nIron Count: %d\nSwords Count: %d \nFlour Count: %d \nBread Count: %d \n XXXXXXXXXXXXXXX\n",
+        this->stronghold->armory.bowsCapacity, this->stronghold->warehouse.woodCapacity,this->stronghold->warehouse.wheatCapacity,this->stronghold->warehouse.ironCapacity, this->stronghold->armory.swordsCapacity,this->stronghold->warehouse.flourCapacity, this->stronghold->granary.breadCapacity);
+    system("cls");
     }   
 }
 
