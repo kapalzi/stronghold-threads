@@ -47,3 +47,10 @@ void Warehouse::storeWood(int amount) {
     woodCapacity+=amount;
 }
 
+void Warehouse::storeWheat(int amount) {
+    wheatCapacity+=amount;
+}
+
+void Warehouse::getWood() {
+    woodCapacity--;
+}

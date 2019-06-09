@@ -15,7 +15,7 @@
 #define WORKERSCOUNT 20
 
 using namespace std;
-class  Miner;
+//class  Miner;
 class Stronghold{
     
 public:
@@ -38,6 +38,8 @@ public:
     thread blacksmiths[WORKERSCOUNT];
     thread bowMakers[WORKERSCOUNT];
     thread miners[WORKERSCOUNT];
+    
+    condition_variable armoryReady;
     
     Warehouse warehouse;
     Armory armory;

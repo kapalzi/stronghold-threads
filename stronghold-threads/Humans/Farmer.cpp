@@ -5,9 +5,9 @@ Farmer::Farmer() {
     
 }
 
-void Farmer:startWorking() {
+void Farmer::startWorking() {
     
-    while(this->stronghold->workingFarmer[this->workerId]) {
+    while(this->stronghold->workingFarmers[this->workerId]) {
         this -> goForResources();
         this -> workOnProduct();
         this -> deliverProduct();
@@ -39,7 +39,9 @@ void Farmer::deliverProduct()
         if (this->stronghold->warehouse.canStoreWheat(1)) {
             this->stronghold->warehouse.storeWheat(1);
             this->stronghold->warehouse.unlock();
-            printf("Zaniesiono zborze \n");
+            //printf("Zaniesiono zborze \n");
+        } else {
+            this->stronghold->warehouse.unlock();
         }
     }
 }

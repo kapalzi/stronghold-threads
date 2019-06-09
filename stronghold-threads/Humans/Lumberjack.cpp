@@ -7,7 +7,7 @@ Lumberjack::Lumberjack() {
 
 void Lumberjack::startWorking() {
     
-    while(this->stronghold->workingMiners[this->workerId]) {
+    while(this->stronghold->workingLumberjacks[this->workerId]) {
         this -> goForResources();
         this -> workOnProduct();
         this -> deliverProduct();
@@ -39,7 +39,9 @@ void Lumberjack::deliverProduct()
         if (this->stronghold->warehouse.canStoreWood(1)) {
             this->stronghold->warehouse.storeWood(1);
             this->stronghold->warehouse.unlock();
-            printf("Zaniesiono drewno \n");
+            //printf("Zaniesiono drewno \n");
+        } else {
+            this->stronghold->warehouse.unlock();
         }
     }
 }

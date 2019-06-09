@@ -39,7 +39,9 @@ void Miner::deliverProduct()
         if (this->stronghold->warehouse.canStoreIron(1)) {
             this->stronghold->warehouse.storeIron(1);
             this->stronghold->warehouse.unlock();
-            printf("Zaniesiono żelazo \n");
+            //printf("Zaniesiono żelazo od górnika %d\n",this->workerId);
+        } else {
+            this->stronghold->warehouse.unlock();
         }
     }
 }

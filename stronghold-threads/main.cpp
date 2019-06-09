@@ -13,12 +13,12 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     
     Life *life = new Life();
-    life->startLife();
+    life->initLife();
     
     
     while(1) {
         if (std::cin.get() == 's') {
-            
+            life->clean();
         }
     }
     return 0;

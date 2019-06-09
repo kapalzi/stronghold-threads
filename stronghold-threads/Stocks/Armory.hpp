@@ -13,4 +13,11 @@ struct Armory: public Stock {
     int bowsMaxCapacity;
     int swordsCapacity;
     int swordsMaxCapacity;
+    
+    bool canStoreBows(int amount);
+    void storeBows(int amount);
+    bool canStoreSwords(int amount);
+    void storeSwords(int amount);
+    void getBows(int amount);
+    void getSwords(int amount);
 };

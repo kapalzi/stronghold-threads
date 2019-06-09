@@ -16,6 +16,10 @@
 		E231937122AC1872008B0F19 /* Miner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231936E22AC1872008B0F19 /* Miner.cpp */; };
 		E231937222AC1872008B0F19 /* Baker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231937022AC1872008B0F19 /* Baker.cpp */; };
 		E231937722AC2BE2008B0F19 /* Life.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231937522AC2BE2008B0F19 /* Life.cpp */; };
+		E231937C22ACF313008B0F19 /* Farmer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231937922ACF313008B0F19 /* Farmer.cpp */; };
+		E231937D22ACF313008B0F19 /* Lumberjack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231937A22ACF313008B0F19 /* Lumberjack.cpp */; };
+		E231938022ACFA5D008B0F19 /* BowMaker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231937E22ACFA5D008B0F19 /* BowMaker.cpp */; };
+		E231938322AD04B7008B0F19 /* Recruiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E231938122AD04B6008B0F19 /* Recruiter.cpp */; };
 		E29227A722ABCA4600391C29 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A422ABCA4600391C29 /* Human.cpp */; };
 		E29227A822ABCA4600391C29 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A522ABCA4600391C29 /* Production.cpp */; };
 		E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A922ABDAC600391C29 /* Stronghold.cpp */; };
@@ -52,6 +56,14 @@
 		E231937022AC1872008B0F19 /* Baker.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Baker.cpp; sourceTree = "<group>"; };
 		E231937522AC2BE2008B0F19 /* Life.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Life.cpp; sourceTree = "<group>"; };
 		E231937622AC2BE2008B0F19 /* Life.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Life.hpp; sourceTree = "<group>"; };
+		E231937822ACF313008B0F19 /* Lumberjack.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Lumberjack.hpp; sourceTree = "<group>"; };
+		E231937922ACF313008B0F19 /* Farmer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Farmer.cpp; sourceTree = "<group>"; };
+		E231937A22ACF313008B0F19 /* Lumberjack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lumberjack.cpp; sourceTree = "<group>"; };
+		E231937B22ACF313008B0F19 /* Farmer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Farmer.hpp; sourceTree = "<group>"; };
+		E231937E22ACFA5D008B0F19 /* BowMaker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BowMaker.cpp; sourceTree = "<group>"; };
+		E231937F22ACFA5D008B0F19 /* BowMaker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BowMaker.hpp; sourceTree = "<group>"; };
+		E231938122AD04B6008B0F19 /* Recruiter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Recruiter.cpp; sourceTree = "<group>"; };
+		E231938222AD04B6008B0F19 /* Recruiter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Recruiter.hpp; sourceTree = "<group>"; };
 		E29227A322ABCA4600391C29 /* Human.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Human.h; sourceTree = "<group>"; };
 		E29227A422ABCA4600391C29 /* Human.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Human.cpp; sourceTree = "<group>"; };
 		E29227A522ABCA4600391C29 /* Production.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Production.cpp; sourceTree = "<group>"; };
@@ -95,6 +107,14 @@
 				E231937022AC1872008B0F19 /* Baker.cpp */,
 				E231936E22AC1872008B0F19 /* Miner.cpp */,
 				E231936F22AC1872008B0F19 /* Miner.h */,
+				E231937922ACF313008B0F19 /* Farmer.cpp */,
+				E231937B22ACF313008B0F19 /* Farmer.hpp */,
+				E231937A22ACF313008B0F19 /* Lumberjack.cpp */,
+				E231937822ACF313008B0F19 /* Lumberjack.hpp */,
+				E231937E22ACFA5D008B0F19 /* BowMaker.cpp */,
+				E231937F22ACFA5D008B0F19 /* BowMaker.hpp */,
+				E231938122AD04B6008B0F19 /* Recruiter.cpp */,
+				E231938222AD04B6008B0F19 /* Recruiter.hpp */,
 			);
 			path = Humans;
 			sourceTree = "<group>";
@@ -190,6 +210,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E20D855322ABEFDD0053656A /* Stock.cpp in Sources */,
+				E231938022ACFA5D008B0F19 /* BowMaker.cpp in Sources */,
+				E231937D22ACF313008B0F19 /* Lumberjack.cpp in Sources */,
+				E231938322AD04B7008B0F19 /* Recruiter.cpp in Sources */,
 				E29227A822ABCA4600391C29 /* Production.cpp in Sources */,
 				E216B251229982D200110D98 /* main.cpp in Sources */,
 				E231937222AC1872008B0F19 /* Baker.cpp in Sources */,
@@ -198,6 +221,7 @@
 				E231937122AC1872008B0F19 /* Miner.cpp in Sources */,
 				E20D855D22AC06190053656A /* Armory.cpp in Sources */,
 				E20D855722ABFDFE0053656A /* Helper.cpp in Sources */,
+				E231937C22ACF313008B0F19 /* Farmer.cpp in Sources */,
 				E231937722AC2BE2008B0F19 /* Life.cpp in Sources */,
 				E20D855A22AC06090053656A /* Granary.cpp in Sources */,
 				E20D856022AC062C0053656A /* Warehouse.cpp in Sources */,

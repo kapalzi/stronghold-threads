@@ -44,8 +44,10 @@ void Stronghold::initWarehouse() {
 }
 
 void Stronghold::initArmory() {
-    this->armory.maxCapacity = 10000;
-    this->armory.currentCapacity = 0;
+    this->armory.swordsMaxCapacity = 150;
+    this->armory.swordsCapacity = 0;
+    this->armory.bowsMaxCapacity = 150;
+    this->armory.bowsCapacity = 0;
 }
 
 void Stronghold::initPopulation(){

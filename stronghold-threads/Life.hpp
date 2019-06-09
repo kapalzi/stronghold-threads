@@ -13,6 +13,8 @@
 #include "Humans/Miner.h"
 #include "Humans/Lumberjack.hpp"
 #include "Humans/Farmer.hpp"
+#include "Humans/BowMaker.hpp"
+#include "Humans/Recruiter.hpp"
 
 
 class Life {
@@ -20,10 +22,15 @@ class Life {
     
 public:
     Stronghold *stronghold;
+    thread recruiter;
     
     Life();
+    void initLife();
     void startLife();
+    void clean();
     void startMiner(int id);
     void startLumberjack(int id);
     void startFarmer(int id);
+    void startBowMaker(int id);
+    void startRecruiter(int id);
 };
