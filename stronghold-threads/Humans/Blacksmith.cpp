@@ -48,7 +48,7 @@ void Blacksmith::deliverProduct()
         if (this->stronghold->armory.canStoreSwords(1)) {
             this->stronghold->armory.storeSwords(1);
             if (this->stronghold->armory.swordsCapacity >= 100) {
-                this->stronghold->armoryReady.notify_one();
+                this->stronghold->swordsReady.notify_one();
             }
             
             this->stronghold->armory.unlock();

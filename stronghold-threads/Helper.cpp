@@ -4,7 +4,7 @@
 #include <cstdlib>
 
 double Helper::getRandomTime(){
-    float time = 2.5 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(3.5-2.5)));
+    float time = 0.5 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(1.5-0.5)));
     return time*1000;
 }
 

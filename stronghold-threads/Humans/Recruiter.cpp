@@ -20,7 +20,8 @@ void Recruiter::startWorking() {
         std::this_thread::sleep_for(chrono::milliseconds(time));
         
         unique_lock<mutex> locker(this->stronghold->armory);
-        this->stronghold->armoryReady.wait(locker);
+        this->stronghold->bowsReady.wait(locker);
+        this->stronghold->swordsReady.wait(locker);
         for (int i = 0; i<20; i++) {
             this->stronghold->workingBowMakers[i] = false;
             this->stronghold->workingMiners[i] = false;
@@ -28,9 +29,10 @@ void Recruiter::startWorking() {
             this->stronghold->workingFarmers[i] = false;
             this->stronghold->workingLumberjacks[i] = false;
         }
-        this->stronghold->armory.getSwords(100);
+        this->stronghold->armory.getBows(50);
+        this->stronghold->armory.getSwords(50);
         
-        printf("Bows Count: %d \nWood Count: %d \nWheat Count: %d \nIron Count: %d\n XXXXXXXXXXXXXXX\n",this->stronghold->armory.bowsCapacity, this->stronghold->warehouse.woodCapacity,this->stronghold->warehouse.wheatCapacity,this->stronghold->warehouse.ironCapacity);
+        printf("Bows Count: %d \nWood Count: %d \nWheat Count: %d \nIron Count: %d\nSwords Count: %d\nBread Count: %d \n XXXXXXXXXXXXXXX\n",this->stronghold->armory.bowsCapacity, this->stronghold->warehouse.woodCapacity,this->stronghold->warehouse.wheatCapacity,this->stronghold->warehouse.ironCapacity, this->stronghold->armory.swordsCapacity, this->stronghold->granary.breadCapacity);
         
         locker.unlock();
     }

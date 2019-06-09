@@ -56,7 +56,7 @@ void BowMaker::deliverProduct()
         if (this->stronghold->armory.canStoreBows(1)) {
             this->stronghold->armory.storeBows(1);
             if (this->stronghold->armory.bowsCapacity >= 100) {
-                this->stronghold->armoryReady.notify_one();
+                this->stronghold->bowsReady.notify_one();
             }
             
             this->stronghold->armory.unlock();

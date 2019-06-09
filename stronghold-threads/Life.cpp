@@ -7,6 +7,7 @@
 //
 
 #include "Life.hpp"
+#include <iostream>
 
 Life::Life() {
     stronghold = new Stronghold();
@@ -21,6 +22,7 @@ void Life::initLife() {
         this->stronghold->workingBowMakers[i] = true;
         this->stronghold->workingBlacksmiths[i] = true;
         this->stronghold->workingMillers[i] = true;
+        this->stronghold->workingBakers[i] = true;
         
         this->stronghold->miners[i] = thread([=] {this->startMiner(i);});
         this->stronghold->lumberjacks[i] = thread([=] {this->startLumberjack(i);});
@@ -28,6 +30,7 @@ void Life::initLife() {
         this->stronghold->bowMakers[i] = thread([=] {this->startBowMaker(i);});
         this->stronghold->blacksmiths[i] = thread([=] {this->startBlacksmith(i);});
         this->stronghold->millers[i] = thread([=] {this->startMiller(i);});
+        this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
     }
     this->startLife();
     //    thread recruiter = thread([=] {this->startRecruiter(0);});
@@ -91,6 +94,11 @@ void Life::startLife() {
                 this->stronghold->workingMillers[i] = true;
                 this->stronghold->millers[i] = thread([=] {this->startMiller(i);});
             }
+            if (this->stronghold->workingBakers[i] == false) {
+                this->stronghold->bakers[i].join();
+                this->stronghold->workingBakers[i] = true;
+                this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
+            }
         }
     }   
 }
@@ -142,5 +150,12 @@ void Life::startMiller(int id) {
     miller->workerId = id;
     miller->stronghold = this->stronghold;
     miller->startWorking();
+}
+
+void Life::startBaker(int id) {
+    Baker *baker = new Baker();
+    baker->workerId = id;
+    baker->stronghold = this->stronghold;
+    baker->startWorking();
 }
 

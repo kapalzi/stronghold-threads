@@ -17,6 +17,7 @@
 #include "Humans/Recruiter.hpp"
 #include "Humans/Blacksmith.hpp"
 #include "Humans/Miller.hpp"
+#include "Humans/Baker.h"
 
 class Life {
     

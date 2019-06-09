@@ -23,6 +23,8 @@
 		E29227A722ABCA4600391C29 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A422ABCA4600391C29 /* Human.cpp */; };
 		E29227A822ABCA4600391C29 /* Production.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A522ABCA4600391C29 /* Production.cpp */; };
 		E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E29227A922ABDAC600391C29 /* Stronghold.cpp */; };
+		E2E7180622ADA28D00FCB48F /* Blacksmith.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E7180222ADA28C00FCB48F /* Blacksmith.cpp */; };
+		E2E7180722ADA28D00FCB48F /* Miller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E7180422ADA28D00FCB48F /* Miller.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +72,10 @@
 		E29227A622ABCA4600391C29 /* Production.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Production.h; sourceTree = "<group>"; };
 		E29227A922ABDAC600391C29 /* Stronghold.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Stronghold.cpp; sourceTree = "<group>"; };
 		E29227AA22ABDAC600391C29 /* Stronghold.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Stronghold.hpp; sourceTree = "<group>"; };
+		E2E7180222ADA28C00FCB48F /* Blacksmith.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Blacksmith.cpp; sourceTree = "<group>"; };
+		E2E7180322ADA28D00FCB48F /* Blacksmith.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Blacksmith.hpp; sourceTree = "<group>"; };
+		E2E7180422ADA28D00FCB48F /* Miller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Miller.cpp; sourceTree = "<group>"; };
+		E2E7180522ADA28D00FCB48F /* Miller.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Miller.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				E231937F22ACFA5D008B0F19 /* BowMaker.hpp */,
 				E231938122AD04B6008B0F19 /* Recruiter.cpp */,
 				E231938222AD04B6008B0F19 /* Recruiter.hpp */,
+				E2E7180222ADA28C00FCB48F /* Blacksmith.cpp */,
+				E2E7180322ADA28D00FCB48F /* Blacksmith.hpp */,
+				E2E7180422ADA28D00FCB48F /* Miller.cpp */,
+				E2E7180522ADA28D00FCB48F /* Miller.hpp */,
 			);
 			path = Humans;
 			sourceTree = "<group>";
@@ -218,12 +228,14 @@
 				E231937222AC1872008B0F19 /* Baker.cpp in Sources */,
 				E29227A722ABCA4600391C29 /* Human.cpp in Sources */,
 				E29227AB22ABDAC600391C29 /* Stronghold.cpp in Sources */,
+				E2E7180622ADA28D00FCB48F /* Blacksmith.cpp in Sources */,
 				E231937122AC1872008B0F19 /* Miner.cpp in Sources */,
 				E20D855D22AC06190053656A /* Armory.cpp in Sources */,
 				E20D855722ABFDFE0053656A /* Helper.cpp in Sources */,
 				E231937C22ACF313008B0F19 /* Farmer.cpp in Sources */,
 				E231937722AC2BE2008B0F19 /* Life.cpp in Sources */,
 				E20D855A22AC06090053656A /* Granary.cpp in Sources */,
+				E2E7180722ADA28D00FCB48F /* Miller.cpp in Sources */,
 				E20D856022AC062C0053656A /* Warehouse.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

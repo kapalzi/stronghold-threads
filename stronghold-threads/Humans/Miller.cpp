@@ -31,14 +31,14 @@ void Miller::goForResources()
     }
 }
 
-void BowMaker::workOnProduct()
+void Miller::workOnProduct()
 {
     //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
 }
-void Farmer::deliverProduct()
+void Miller::deliverProduct()
 {
 //    Human:deliverProduct();
     signed int time = Helper::getRandomTime();

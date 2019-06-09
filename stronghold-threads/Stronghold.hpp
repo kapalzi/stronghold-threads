@@ -39,7 +39,8 @@ public:
     thread bowMakers[WORKERSCOUNT];
     thread miners[WORKERSCOUNT];
     
-    condition_variable armoryReady;
+    condition_variable bowsReady;
+    condition_variable swordsReady;
     
     Warehouse warehouse;
     Armory armory;

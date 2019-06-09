@@ -8,7 +8,7 @@ Baker::Baker() {
 
 void Baker::startWorking() {
     
-    while(this->stronghold->workingBowMakers[this->workerId]) {
+    while(this->stronghold->workingBakers[this->workerId]) {
         this -> goForResources();
         this -> workOnProduct();
         this -> deliverProduct();
