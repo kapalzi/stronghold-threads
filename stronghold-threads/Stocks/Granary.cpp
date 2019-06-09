@@ -7,3 +7,14 @@
 //
 
 #include "Granary.hpp"
+bool Granary::canStoreBreads(int amount) {
+    return Stock::canStore(amount, this->breadCapacity, this->breadMaxCapacity);
+}
+
+void Granary::storeBreads(int amount) {
+    breadCapacity+=amount;
+}
+
+void Granary::getBreads(int amount) {
+    breadCapacity-=amount;
+}

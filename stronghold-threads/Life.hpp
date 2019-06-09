@@ -16,6 +16,7 @@
 #include "Humans/BowMaker.hpp"
 #include "Humans/Recruiter.hpp"
 #include "Humans/Blacksmith.hpp"
+#include "Humans/Miller.hpp"
 
 class Life {
     

@@ -25,7 +25,7 @@ public:
     
     atomic_bool workingLumberjacks[WORKERSCOUNT];
     atomic_bool workingFarmers[WORKERSCOUNT];
-    atomic_bool workingMiller[WORKERSCOUNT];
+    atomic_bool workingMillers[WORKERSCOUNT];
     atomic_bool workingBakers[WORKERSCOUNT];
     atomic_bool workingBlacksmiths[WORKERSCOUNT];
     atomic_bool workingBowMakers[WORKERSCOUNT];
@@ -33,7 +33,7 @@ public:
     
     thread lumberjacks[WORKERSCOUNT];
     thread farmers[WORKERSCOUNT];
-    thread miller[WORKERSCOUNT];
+    thread millers[WORKERSCOUNT];
     thread bakers[WORKERSCOUNT];
     thread blacksmiths[WORKERSCOUNT];
     thread bowMakers[WORKERSCOUNT];

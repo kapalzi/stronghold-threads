@@ -20,12 +20,14 @@ void Life::initLife() {
         this->stronghold->workingFarmers[i] = true;
         this->stronghold->workingBowMakers[i] = true;
         this->stronghold->workingBlacksmiths[i] = true;
+        this->stronghold->workingMillers[i] = true;
         
         this->stronghold->miners[i] = thread([=] {this->startMiner(i);});
         this->stronghold->lumberjacks[i] = thread([=] {this->startLumberjack(i);});
         this->stronghold->farmers[i] = thread([=] {this->startFarmer(i);});
         this->stronghold->bowMakers[i] = thread([=] {this->startBowMaker(i);});
         this->stronghold->blacksmiths[i] = thread([=] {this->startBlacksmith(i);});
+        this->stronghold->millers[i] = thread([=] {this->startMiller(i);});
     }
     this->startLife();
     //    thread recruiter = thread([=] {this->startRecruiter(0);});
@@ -45,6 +47,12 @@ void Life::clean() {
         }
         if (this->stronghold->workingBowMakers[i] == false) {
             this->stronghold->bowMakers[i].join();
+        }
+        if (this->stronghold->workingBlacksmiths[i] == false) {
+            this->stronghold->blacksmiths[i].join();
+        }
+        if (this->stronghold->workingMillers[i] == false) {
+            this->stronghold->millers[i].join();
         }
     }
 }
@@ -72,6 +80,16 @@ void Life::startLife() {
                 this->stronghold->bowMakers[i].join();
                 this->stronghold->workingBowMakers[i] = true;
                 this->stronghold->bowMakers[i] = thread([=] {this->startBowMaker(i);});
+            }
+            if (this->stronghold->workingBlacksmiths[i] == false) {
+                this->stronghold->blacksmiths[i].join();
+                this->stronghold->workingBlacksmiths[i] = true;
+                this->stronghold->blacksmiths[i] = thread([=] {this->startBlacksmith(i);});
+            }
+            if (this->stronghold->workingMillers[i] == false) {
+                this->stronghold->millers[i].join();
+                this->stronghold->workingMillers[i] = true;
+                this->stronghold->millers[i] = thread([=] {this->startMiller(i);});
             }
         }
     }   
@@ -105,9 +123,24 @@ void Life::startBowMaker(int id) {
     bowMaker->startWorking();
 }
 
+void Life::startBlacksmith(int id) {
+    Blacksmith *blacksmith = new Blacksmith();
+    blacksmith->workerId = id;
+    blacksmith->stronghold = this->stronghold;
+    blacksmith->startWorking();
+}
+
 void Life::startRecruiter(int id) {
     Recruiter *recruiter = new Recruiter();
     recruiter->workerId = id;
     recruiter->stronghold = this->stronghold;
     recruiter->startWorking();
 }
+
+void Life::startMiller(int id) {
+    Miller *miller = new Miller();
+    miller->workerId = id;
+    miller->stronghold = this->stronghold;
+    miller->startWorking();
+}
+
