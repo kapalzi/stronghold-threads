@@ -32,5 +32,8 @@ public:
     void startLumberjack(int id);
     void startFarmer(int id);
     void startBowMaker(int id);
+    void startBlacksmith(int id);
     void startRecruiter(int id);
+    void startMiller(int id);
+
 };
