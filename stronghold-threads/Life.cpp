@@ -88,16 +88,71 @@ void Life::initNcurses(){
         x= WORKERSCOUNT+i;
         y= 30;
         move(x,y);
-        printw("Piekarz nr %d : %s", i, " " );
+        printw("Baker nr %d : %s", i, " " );
 //        refresh();
 //        clrtoeol();
         }
 
     }
+    {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(63,30);
+    move(63,70);
+    printw("Recruiter: %s", " " );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(64,70);
+    printw("Granary " );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(65,70);
+    printw("Bread:" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(66,70);
+    printw("Armory" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(67,70);
+    printw("Bows:" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(68,70);
+    printw("Swords:" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(69,70);
+    printw("Warehouse" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(70,70);
+    printw("Iron:" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(71,70);
+    printw("Wood:" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(72,70);
+    printw("Wheat:" );
+    }
+    {
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(73,70);
+    printw("Flour:" );
+    }
     getch();
     endwin();
+    }
+    
 }
 void Life::initLife() {
     
