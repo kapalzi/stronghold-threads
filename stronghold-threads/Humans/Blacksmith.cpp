@@ -29,7 +29,7 @@ void Blacksmith::goForResources()
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
                   
                 move(this->workerId,130);
-                printw("nr %d : %s", this->workerId, "Went for resources to warehouse." );
+                printw("nr %d : %s", this->workerId, "Went for resources to warehouse.      " );
                 refresh();
             }
         } else {
@@ -50,7 +50,7 @@ void Blacksmith::workOnProduct()
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
           
         move(this->workerId,130);
-        printw("nr %d : %s", this->workerId, "Worked on product" );
+        printw("nr %d : %s", this->workerId, "Worked on product                 " );
         refresh();
     }
     
@@ -77,7 +77,7 @@ void Blacksmith::deliverProduct()
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
                       
                     move(this->workerId,130);
-                    printw("nr %d : %s", this->workerId, "Delivered product to armory." );
+                    printw("nr %d : %s", this->workerId, "Delivered product to armory.          " );
                     refresh();
                 }
             } else {

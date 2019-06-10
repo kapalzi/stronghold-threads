@@ -37,7 +37,7 @@ void BowMaker::goForResources()
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
                       
                     move(WORKERSCOUNT*4+this->workerId,30);
-                    printw("nr %d : %s", this->workerId, "Went for resources to warehouse." );
+                    printw("nr %d : %s", this->workerId, "Went for resources to warehouse.          " );
                     refresh();
             }
         } else {
@@ -57,7 +57,7 @@ void BowMaker::workOnProduct()
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
           
         move(WORKERSCOUNT*4+this->workerId,30);
-        printw("nr %d : %s", this->workerId, "Worked on product." );
+        printw("nr %d : %s", this->workerId, "Worked on product.                " );
         refresh();
     }
     
@@ -85,7 +85,7 @@ void BowMaker::deliverProduct()
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
                       
                     move(WORKERSCOUNT*4+this->workerId,30);
-                    printw("nr %d : %s", this->workerId, "Delivered product to armory." );
+                    printw("nr %d : %s", this->workerId, "Delivered product to armory.          " );
                     refresh();
     }
             } else {

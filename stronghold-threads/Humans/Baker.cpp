@@ -29,7 +29,7 @@ void Baker::goForResources()
             
             {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Went for resources.");
+                mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Went for resources.           ");
                 refresh();
             }
             
@@ -48,7 +48,7 @@ void Baker::workOnProduct()
     
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Worked on product.");
+        mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Worked on product.                ");
         refresh();
     }
     
@@ -67,7 +67,7 @@ void Baker::deliverProduct()
             }
             {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Delivered to granary.");
+                mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Delivered to granary.         ");
                 refresh();
             }
             this->stronghold->granary.unlock();
