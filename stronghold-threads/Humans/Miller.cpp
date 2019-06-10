@@ -78,6 +78,7 @@ void Miller::deliverProduct()
                 }
             } else {
                 this->stronghold->warehouse.unlock();
+                this->stronghold->granary.unlock();
             }
         } else {
             this->stronghold->warehouse.unlock();

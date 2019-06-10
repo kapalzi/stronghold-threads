@@ -21,7 +21,6 @@ void Stronghold::initWorld() {
     this->initWarehouse();
     this->initArmory();
     this->initPopulation();
-//    this->startLife();
 }
 
 void Stronghold::initGranary() {

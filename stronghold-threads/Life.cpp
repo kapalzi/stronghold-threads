@@ -172,17 +172,21 @@ void Life::initLife() {
         this->stronghold->millers[i] = thread([=] {this->startMiller(i);});
         this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
     }
-     finish = false;
+    finish = false;
+    std::cin.get();
         while(!finish) {
             this->startLife();
-//            if (std::cin.get() == 's') {
-//                finish = true;
-//            } else {
-//
-//            }
+            if (std::cin.get() == 's') {
+                {
+                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                    mvprintw(WORKERSCOUNT+30, 130, "KURWA");
+                    refresh();
+                }
+                finish = true;
+            }
         }
+        clean();
     
-        std::cin.get();
         endwin();
 }
 
@@ -207,8 +211,14 @@ void Life::clean() {
 }
 
 void Life::startLife() {
+
         for (int i = 0; i < WORKERSCOUNT; ++i) {
             if (this->stronghold->workingMiners[i] == false) {
+                {
+                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                    mvprintw(WORKERSCOUNT+35, 130, "chuj %i",i);
+                    refresh();
+                }
                 this->stronghold->miners[i].join();
                 this->stronghold->workingMiners[i] = true;
                 this->stronghold->miners[i] = thread([=] {this->startMiner(i);});

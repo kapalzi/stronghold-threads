@@ -65,8 +65,8 @@ void Baker::deliverProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
     if (this->stronghold->granary.try_lock()) {
-        if (this->stronghold->granary.canStoreBreads(3)) {
-            this->stronghold->granary.storeBreads(3);
+        if (this->stronghold->granary.canStoreBreads(7)) {
+            this->stronghold->granary.storeBreads(7);
             {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
                 mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Delivered to granary.         ");
