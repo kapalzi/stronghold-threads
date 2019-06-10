@@ -1,5 +1,6 @@
 #include "Miner.h"
 #include "../Helper.h"
+#include <ncurses.h>
 
 Miner::Miner() {
     
@@ -20,6 +21,13 @@ void Miner::goForResources()
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        clrtoeol();
+        move(WORKERSCOUNT+this->workerId,30);
+        printw("nr %d : %s", this->workerId, "Went for resources." );
+        refresh();
+    }
 }
 
 void Miner::workOnProduct()
@@ -27,6 +35,14 @@ void Miner::workOnProduct()
 //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
+    
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        clrtoeol();
+        move(WORKERSCOUNT+this->workerId,30);
+        printw("nr %d : %s", this->workerId, "Worked on product." );
+        refresh();
+    }
 
 }
 void Miner::deliverProduct()
@@ -44,6 +60,13 @@ void Miner::deliverProduct()
                 }
                 this->stronghold->warehouse.unlock();
                 this->stronghold->granary.unlock();
+                {
+                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                    clrtoeol();
+                    move(WORKERSCOUNT+this->workerId,30);
+                    printw("nr %d : %s", this->workerId, "Delivered product." );
+                    refresh();
+                }
                 //printf("Zaniesiono żelazo od górnika %d\n",this->workerId);
             } else {
                 this->stronghold->warehouse.unlock();

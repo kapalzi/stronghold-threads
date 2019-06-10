@@ -25,7 +25,6 @@ class Life {
 public:
     Stronghold *stronghold;
     thread recruiter;
-    std::mutex cout_mutex;
     bool finish = false;
 
     Life();

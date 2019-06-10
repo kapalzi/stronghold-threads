@@ -46,6 +46,7 @@ public:
     Warehouse warehouse;
     Armory armory;
     Granary granary;
+    std::mutex cout_mutex;
     
     void initWorld();
     void initGranary();

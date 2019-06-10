@@ -11,8 +11,6 @@
 #include "Helper.h"
 #include <ncurses.h>
 
-
-
 Life::Life() {
     stronghold = new Stronghold();
 }
@@ -25,7 +23,7 @@ void Life::initNcurses(){
     int y= 0;
     for(int i=0; i<WORKERSCOUNT;i++){
         {
-        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         x=i;
         y=0;
         move(x,y);
@@ -35,7 +33,7 @@ void Life::initNcurses(){
         }
         
         {
-        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         x= WORKERSCOUNT+i;
         y= 0;
         move(x,y);
@@ -45,7 +43,7 @@ void Life::initNcurses(){
         }
 
         {
-        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         x= WORKERSCOUNT*2+i;
         y= 0;
         move(x,y);
@@ -55,7 +53,7 @@ void Life::initNcurses(){
         }
 
         {
-        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         x= WORKERSCOUNT*3+i;
         y= 0;
         move(x,y);
@@ -65,7 +63,7 @@ void Life::initNcurses(){
         }
 
         {
-        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         x= WORKERSCOUNT*4+i;
         y= 0;
         move(x,y);
@@ -75,7 +73,7 @@ void Life::initNcurses(){
         }
 
         {
-        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         x= i;
         y= 100;
         move(x,y);
@@ -84,7 +82,7 @@ void Life::initNcurses(){
 //        clrtoeol();
         }
         {
-        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         x= WORKERSCOUNT+i;
         y= 100;
         move(x,y);
@@ -94,62 +92,62 @@ void Life::initNcurses(){
         }
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(20,100);
     printw("Recruiter: %s", " " );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(22,100);
     printw("Granary " );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(23,100);
     printw("Bread:" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(25,100);
     printw("Armory" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(26,100);
     printw("Bows:" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(27,100);
     printw("Swords:" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(29,100);
     printw("Warehouse" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(30,100);
     printw("Iron:" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(31,100);
     printw("Wood:" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(32,100);
     printw("Wheat:" );
     }
     {
-    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(33,100);
     printw("Flour:" );
     }
-    getch();
-    endwin();
+//    getch();
+//    endwin();
 }
 
 void Life::initLife() {

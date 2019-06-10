@@ -1,6 +1,7 @@
 //#include "Baker.h"
 #include "Baker.h"
 #include "../Helper.h"
+#include <ncurses.h>
 
 Baker::Baker() {
     
@@ -25,6 +26,15 @@ void Baker::goForResources()
         if (this->stronghold->warehouse.canGetFlour()) {
             this->stronghold->warehouse.getFlour();
             this->stronghold->warehouse.unlock();
+            
+            {
+                std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                move(WORKERSCOUNT+this->workerId,130);
+                clrtoeol();
+                printw("nr %d : %s", this->workerId, "Went for resources." );
+                refresh();
+            }
+            
             //printf("Wzięto make \n");
         } else {
             this->stronghold->warehouse.unlock();
