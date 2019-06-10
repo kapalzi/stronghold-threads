@@ -1,5 +1,6 @@
 #include "Lumberjack.hpp"
 #include "../Helper.h"
+#include <ncurses.h>
 
 Lumberjack::Lumberjack() {
     
@@ -20,6 +21,14 @@ void Lumberjack::goForResources()
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        clrtoeol();
+        move(this->workerId,30);
+        printw("nr %d : %s", this->workerId, "Went for resources to warehouse.              Blacksmith" );
+        refresh();
+    }
+    
 }
 
 void Lumberjack::workOnProduct()
@@ -27,6 +36,13 @@ void Lumberjack::workOnProduct()
 //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        clrtoeol();
+        move(this->workerId,30);
+        printw("nr %d : %s", this->workerId, "Worked on product                             Blacksmith" );
+        refresh();
+    }
 
 }
 void Lumberjack::deliverProduct()
@@ -44,6 +60,13 @@ void Lumberjack::deliverProduct()
                 }
                 this->stronghold->warehouse.unlock();
                 this->stronghold->granary.unlock();
+                {
+                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                    clrtoeol();
+                    move(this->workerId,30);
+                    printw("nr %d : %s", this->workerId, "Delivered product to armory.                  Blacksmith" );
+                    refresh();
+                }
                 //printf("Zaniesiono drewno \n");
             } else {
                 this->stronghold->warehouse.unlock();
