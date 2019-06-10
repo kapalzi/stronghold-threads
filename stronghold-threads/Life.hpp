@@ -26,7 +26,7 @@ public:
     Stronghold *stronghold;
     thread recruiter;
     std::mutex cout_mutex;
-    atomic_bool finish = false;
+    bool finish = false;
 
     Life();
     void initLife();

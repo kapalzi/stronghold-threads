@@ -19,19 +19,27 @@ Life::Life() {
 
 void Life::initNcurses(){
     initscr();
+    curs_set(0);
+    printw( "Hello World !!!" );
+    
     for(int i=0; i<WORKERSCOUNT;i++){
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
-        int x= 0;
-        int y= i;
+        int x= i;
+        int y= 0;
         move(x,y);
-        printw("Drwal nr %d : %s", this->stronghold->lumberjacks->workerID, this->stronghold->lumberjacks->state.c_str() );
-        clrtoeol();
+        printw("Drwal nr %d : %s", i, " " );
+//        refresh();
+//        clrtoeol();
         }
     }
-    
+    getch();
+    endwin();
 }
 void Life::initLife() {
+    
+    initNcurses();
+    
     recruiter = thread([=] {this->startRecruiter(0);});
     for (int i = 0; i < WORKERSCOUNT; ++i) {
         this->stronghold->workingMiners[i] = true;
@@ -87,7 +95,6 @@ void Life::startLife() {
 
     std::cin.get();
     endwin();
-    return;
 
         for (int i = 0; i < WORKERSCOUNT; ++i) {
             
@@ -132,7 +139,7 @@ void Life::startLife() {
     std::this_thread::sleep_for(chrono::milliseconds(time));
     printf("Bows Count: %d \nWood Count: %d \nWheat Count: %d \nIron Count: %d\nSwords Count: %d \nFlour Count: %d \nBread Count: %d \n XXXXXXXXXXXXXXX\n",
         this->stronghold->armory.bowsCapacity, this->stronghold->warehouse.woodCapacity,this->stronghold->warehouse.wheatCapacity,this->stronghold->warehouse.ironCapacity, this->stronghold->armory.swordsCapacity,this->stronghold->warehouse.flourCapacity, this->stronghold->granary.breadCapacity);
-    }   
+    
 }
 
 void Life::startMiner(int id) {
