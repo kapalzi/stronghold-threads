@@ -27,7 +27,7 @@ void Miller::goForResources()
             this->stronghold->warehouse.unlock();
              {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                move(WORKERSCOUNT*2+this->workerId,30);
+                move(WORKERSCOUNT*3+this->workerId,30);
                 printw("nr %d : %s", this->workerId, "Went for resources to warehouse.            " );
                 refresh();
             }
@@ -44,7 +44,7 @@ void Miller::workOnProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                move(WORKERSCOUNT*2+this->workerId,30);
+                move(WORKERSCOUNT*3+this->workerId,30);
                 printw("nr %d : %s", this->workerId, "Worked on prodcut                  " );
                 refresh();
             }
@@ -67,7 +67,7 @@ void Miller::deliverProduct()
                 this->stronghold->granary.unlock();
                 {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                move(WORKERSCOUNT*2+this->workerId,30);
+                move(WORKERSCOUNT*3+this->workerId,30);
                 printw("nr %d : %s", this->workerId, "Delivered to warehouse           " );
                 refresh();
                 }
