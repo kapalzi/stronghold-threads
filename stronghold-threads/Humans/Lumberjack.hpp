@@ -13,4 +13,5 @@ public:
     void workOnProduct();
     void deliverProduct();
     void startWorking();
+    void printStocks();
 };

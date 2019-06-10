@@ -67,6 +67,7 @@ void Lumberjack::deliverProduct()
                     printw("nr %d : %s", this->workerId, "Delivered product to warehouse." );
                     refresh();
                 }
+                printStocks();
                 //printf("Zaniesiono drewno \n");
             } else {
                 this->stronghold->warehouse.unlock();
@@ -75,5 +76,43 @@ void Lumberjack::deliverProduct()
         } else {
             this->stronghold->warehouse.unlock();
         }
+    }
+}
+
+void Lumberjack::printStocks() {
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+13, 130, "%d / %d", this->stronghold->granary.breadCapacity, this->stronghold->granary.breadMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+16, 130, "%d / %d", this->stronghold->armory.bowsCapacity, this->stronghold->armory.bowsMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+17, 130, "%d / %d", this->stronghold->armory.swordsCapacity, this->stronghold->armory.swordsMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+20, 130, "%d / %d", this->stronghold->warehouse.ironCapacity, this->stronghold->warehouse.ironMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+21, 130, "%d / %d", this->stronghold->warehouse.woodCapacity, this->stronghold->warehouse.woodMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+22, 130, "%d / %d", this->stronghold->warehouse.wheatCapacity, this->stronghold->warehouse.wheatMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+23, 130, "%d / %d", this->stronghold->warehouse.flourCapacity, this->stronghold->warehouse.flourMaxCapacity);
+        refresh();
     }
 }

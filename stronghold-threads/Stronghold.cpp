@@ -25,7 +25,7 @@ void Stronghold::initWorld() {
 }
 
 void Stronghold::initGranary() {
-    this->granary.breadCapacity = 10000;
+    this->granary.breadMaxCapacity = 10000;
     this->granary.breadCapacity = 1000;
 }
 

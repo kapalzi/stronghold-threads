@@ -75,7 +75,5 @@ void Baker::deliverProduct()
         } else {
             this->stronghold->granary.unlock();
         }
-    } else {
-        deliverProduct();
     }
 }
