@@ -77,7 +77,7 @@ void Life::initNcurses(){
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
         x= i;
-        y= 30;
+        y= 100;
         move(x,y);
         printw("Blacksmith nr %d : %s", i, " " );
 //        refresh();
@@ -86,7 +86,7 @@ void Life::initNcurses(){
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
         x= WORKERSCOUNT+i;
-        y= 30;
+        y= 100;
         move(x,y);
         printw("Baker nr %d : %s", i, " " );
 //        refresh();
@@ -96,57 +96,57 @@ void Life::initNcurses(){
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(63,70);
+    move(64,100);
     printw("Recruiter: %s", " " );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(64,70);
+    move(65,100);
     printw("Granary " );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(65,70);
+    move(66,100);
     printw("Bread:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(66,70);
+    move(67,100);
     printw("Armory" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(67,70);
+    move(68,100);
     printw("Bows:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(68,70);
+    move(69,100);
     printw("Swords:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(69,70);
+    move(70,100);
     printw("Warehouse" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(70,70);
+    move(71,100);
     printw("Iron:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(71,70);
+    move(72,100);
     printw("Wood:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(72,70);
+    move(73,100);
     printw("Wheat:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(73,70);
+    move(74,100);
     printw("Flour:" );
     }
     getch();
