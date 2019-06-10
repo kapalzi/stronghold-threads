@@ -45,10 +45,18 @@ void Miller::deliverProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     std::this_thread::sleep_for(chrono::milliseconds(time));
     if (this->stronghold->warehouse.try_lock()) {
-        if (this->stronghold->warehouse.canStoreFlour(4)) {
-            this->stronghold->warehouse.storeFlour(4);
-            this->stronghold->warehouse.unlock();
-            //printf("Zaniesiono make \n");
+        if (this->stronghold->granary.try_lock()) {
+            if (this->stronghold->warehouse.canStoreFlour(4)) {
+                this->stronghold->warehouse.storeFlour(4);
+                if (this->stronghold->granary.canGetBread()) {
+                    this->stronghold->granary.getBreads(1);
+                }
+                this->stronghold->warehouse.unlock();
+                this->stronghold->granary.unlock();
+                //printf("Zaniesiono make \n");
+            } else {
+                this->stronghold->warehouse.unlock();
+            }
         } else {
             this->stronghold->warehouse.unlock();
         }

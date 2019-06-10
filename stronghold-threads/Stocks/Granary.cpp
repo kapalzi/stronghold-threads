@@ -18,3 +18,7 @@ void Granary::storeBreads(int amount) {
 void Granary::getBreads(int amount) {
     breadCapacity-=amount;
 }
+
+bool Granary::canGetBread() {
+    return Stock::canGet(this->breadCapacity);
+}

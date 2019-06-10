@@ -38,10 +38,19 @@ void Farmer::deliverProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
     if (this->stronghold->warehouse.try_lock()) {
-        if (this->stronghold->warehouse.canStoreWheat(4)) {
-            this->stronghold->warehouse.storeWheat(4);
-            this->stronghold->warehouse.unlock();
-            //printf("Zaniesiono zborze \n");
+        if (this->stronghold->granary.try_lock()) {
+            if (this->stronghold->warehouse.canStoreWheat(4)) {
+                this->stronghold->warehouse.storeWheat(4);
+                if (this->stronghold->granary.canGetBread()) {
+                    this->stronghold->granary.getBreads(1);
+                }
+                this->stronghold->warehouse.unlock();
+                this->stronghold->granary.unlock();
+                //printf("Zaniesiono zborze \n");
+            } else {
+                this->stronghold->warehouse.unlock();
+                this->stronghold->granary.unlock();
+            }
         } else {
             this->stronghold->warehouse.unlock();
         }

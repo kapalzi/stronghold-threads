@@ -55,14 +55,23 @@ void BowMaker::deliverProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
     if (this->stronghold->armory.try_lock()) {
-        if (this->stronghold->armory.canStoreBows(1)) {
-            this->stronghold->armory.storeBows(1);
-            if (this->stronghold->armory.bowsCapacity >= 50) {
-                this->stronghold->bowsReady.notify_one();
+        if (this->stronghold->granary.try_lock()) {
+            if (this->stronghold->armory.canStoreBows(1)) {
+                this->stronghold->armory.storeBows(1);
+                if (this->stronghold->granary.canGetBread()) {
+                    this->stronghold->granary.getBreads(1);
+                }
+                if (this->stronghold->armory.bowsCapacity >= 50) {
+                    this->stronghold->bowsReady.notify_one();
+                }
+                
+                this->stronghold->armory.unlock();
+                this->stronghold->granary.unlock();
+                //printf("Zaniesiono łuk \n");
+            } else {
+                this->stronghold->armory.unlock();
+                this->stronghold->granary.unlock();
             }
-            
-            this->stronghold->armory.unlock();
-            //printf("Zaniesiono łuk \n");
         } else {
             this->stronghold->armory.unlock();
         }

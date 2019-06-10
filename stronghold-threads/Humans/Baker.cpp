@@ -46,8 +46,8 @@ void Baker::deliverProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     
     if (this->stronghold->granary.try_lock()) {
-        if (this->stronghold->granary.canStoreBreads(2)) {
-            this->stronghold->granary.storeBreads(2);
+        if (this->stronghold->granary.canStoreBreads(3)) {
+            this->stronghold->granary.storeBreads(3);
             if (this->stronghold->granary.breadCapacity >= 100) {
                 this->stronghold->breadsReady.notify_one();
             }

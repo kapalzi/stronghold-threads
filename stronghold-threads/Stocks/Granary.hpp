@@ -15,4 +15,5 @@ struct Granary: public Stock {
     bool canStoreBreads(int amount);
     void storeBreads(int amount);
     void getBreads(int amount);
+    bool canGetBread();
 };

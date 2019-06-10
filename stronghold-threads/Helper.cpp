@@ -14,7 +14,7 @@ double Helper::getRandomLiveTime(){
 }
 
 double Helper::getPrintfTime(){
-    float time = 5;
+    float time = 1;
     return time*1000;
 }
 
