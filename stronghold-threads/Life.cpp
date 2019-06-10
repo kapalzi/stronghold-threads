@@ -11,10 +11,26 @@
 #include "Helper.h"
 #include <ncurses.h>
 
+
+
 Life::Life() {
     stronghold = new Stronghold();
 }
 
+void Life::initNcurses(){
+    initscr();
+    for(int i=0; i<WORKERSCOUNT;i++){
+        {
+        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        int x= 0;
+        int y= i;
+        move(x,y);
+        printw("Drwal nr %d : %s", this->stronghold->lumberjacks->workerID, this->stronghold->lumberjacks->state.c_str() );
+        clrtoeol();
+        }
+    }
+    
+}
 void Life::initLife() {
     recruiter = thread([=] {this->startRecruiter(0);});
     for (int i = 0; i < WORKERSCOUNT; ++i) {
@@ -62,7 +78,17 @@ void Life::clean() {
 }
 
 void Life::startLife() {
-    while (1) {
+
+    while(!finish) {
+        if (std::cin.get() == 's') {
+            finish = true;
+        }
+    }
+
+    std::cin.get();
+    endwin();
+    return;
+
         for (int i = 0; i < WORKERSCOUNT; ++i) {
             
             if (this->stronghold->workingMiners[i] == false) {

@@ -54,3 +54,8 @@ void Human::deliverProduct()
 	std::this_thread::sleep_for(std::chrono::milliseconds(time));
 }
 
+void Human::setState(string x)
+{
+	this->state=x;
+}
+

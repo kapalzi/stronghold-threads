@@ -11,12 +11,14 @@ protected:
 
     
 	int foodIndex;
+	
 public:
 
 	Human();
 	~Human();
 //    Stronghold *stronghold;
     int workerId;
+	string state;
 	void setfoodIndex(int);
 	int getfoodIndex();
 	void setOccupation(string);
@@ -26,4 +28,5 @@ public:
 	void workOnProduct();
 	void deliverProduct();
 	void stopWorking();
+	void setState(string);
 };

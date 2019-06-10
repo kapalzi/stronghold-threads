@@ -25,9 +25,12 @@ class Life {
 public:
     Stronghold *stronghold;
     thread recruiter;
-    
+    std::mutex cout_mutex;
+    atomic_bool finish = false;
+
     Life();
     void initLife();
+    void initNcurses();
     void startLife();
     void clean();
     void startMiner(int id);
@@ -38,5 +41,6 @@ public:
     void startRecruiter(int id);
     void startMiller(int id);
     void startBaker(int id);
+    
 
 };
