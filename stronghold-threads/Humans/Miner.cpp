@@ -64,7 +64,7 @@ void Miner::deliverProduct()
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
                     clrtoeol();
                     move(WORKERSCOUNT+this->workerId,30);
-                    printw("nr %d : %s", this->workerId, "Delivered product." );
+                    printw("nr %d : %s", this->workerId, "Delivered to warehouse." );
                     refresh();
                 }
                 //printf("Zaniesiono żelazo od górnika %d\n",this->workerId);

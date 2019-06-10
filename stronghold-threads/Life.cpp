@@ -18,7 +18,6 @@ Life::Life() {
 void Life::initNcurses(){
     initscr();
     curs_set(0);
-    printw( "Hello World !!!" );
     int x= 0;
     int y= 0;
     for(int i=0; i<WORKERSCOUNT;i++){
