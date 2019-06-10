@@ -1,5 +1,6 @@
 #include "Miller.hpp"
 #include "../Helper.h"
+#include <ncurses.h>
 
 Miller::Miller() {
     
@@ -24,7 +25,12 @@ void Miller::goForResources()
         if (this->stronghold->warehouse.canGetWheat()) {
             this->stronghold->warehouse.getWheat();
             this->stronghold->warehouse.unlock();
-            //printf("Wzięto drewno \n");
+             {
+                std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                move(WORKERSCOUNT*2+this->workerId,30);
+                printw("nr %d : %s", this->workerId, "Went for resources to warehouse.            " );
+                refresh();
+            }
         } else {
             this->stronghold->warehouse.unlock();
         }
@@ -36,6 +42,12 @@ void Miller::workOnProduct()
     //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
+    {
+                std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                move(WORKERSCOUNT*2+this->workerId,30);
+                printw("nr %d : %s", this->workerId, "Worked on prodcut                  " );
+                refresh();
+            }
     
 }
 void Miller::deliverProduct()
@@ -53,7 +65,12 @@ void Miller::deliverProduct()
                 }
                 this->stronghold->warehouse.unlock();
                 this->stronghold->granary.unlock();
-                //printf("Zaniesiono make \n");
+                {
+                std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                move(WORKERSCOUNT*2+this->workerId,30);
+                printw("nr %d : %s", this->workerId, "Delivered to warehouse           " );
+                refresh();
+                }
             } else {
                 this->stronghold->warehouse.unlock();
             }
