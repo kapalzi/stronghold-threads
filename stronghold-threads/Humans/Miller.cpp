@@ -43,10 +43,10 @@ void Miller::deliverProduct()
 //    Human:deliverProduct();
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
-    
+    std::this_thread::sleep_for(chrono::milliseconds(time));
     if (this->stronghold->warehouse.try_lock()) {
-        if (this->stronghold->warehouse.canStoreFlour(1)) {
-            this->stronghold->warehouse.storeFlour(1);
+        if (this->stronghold->warehouse.canStoreFlour(4)) {
+            this->stronghold->warehouse.storeFlour(4);
             this->stronghold->warehouse.unlock();
             //printf("Zaniesiono make \n");
         } else {

@@ -12,7 +12,6 @@ struct Stock : std::mutex {
     int maxCapacity;
     int currentCapacity;
     
-    
     Stock();
     bool canStore(int amount, int current, int max);
     bool canGet(int current);

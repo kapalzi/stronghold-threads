@@ -36,6 +36,8 @@ void Blacksmith::workOnProduct()
     //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
+    std::this_thread::sleep_for(chrono::milliseconds(time));
+    std::this_thread::sleep_for(chrono::milliseconds(time));
     
 }
 void Blacksmith::deliverProduct()
@@ -47,7 +49,7 @@ void Blacksmith::deliverProduct()
     if (this->stronghold->armory.try_lock()) {
         if (this->stronghold->armory.canStoreSwords(1)) {
             this->stronghold->armory.storeSwords(1);
-            if (this->stronghold->armory.swordsCapacity >= 100) {
+            if (this->stronghold->armory.swordsCapacity >= 50) {
                 this->stronghold->swordsReady.notify_one();
             }
             

@@ -44,6 +44,8 @@ void BowMaker::workOnProduct()
     //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
+    std::this_thread::sleep_for(chrono::milliseconds(time));
+    std::this_thread::sleep_for(chrono::milliseconds(time));
     
 }
 void BowMaker::deliverProduct()
@@ -55,7 +57,7 @@ void BowMaker::deliverProduct()
     if (this->stronghold->armory.try_lock()) {
         if (this->stronghold->armory.canStoreBows(1)) {
             this->stronghold->armory.storeBows(1);
-            if (this->stronghold->armory.bowsCapacity >= 100) {
+            if (this->stronghold->armory.bowsCapacity >= 50) {
                 this->stronghold->bowsReady.notify_one();
             }
             

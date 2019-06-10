@@ -41,6 +41,7 @@ public:
     
     condition_variable bowsReady;
     condition_variable swordsReady;
+    condition_variable breadsReady;
     
     Warehouse warehouse;
     Armory armory;

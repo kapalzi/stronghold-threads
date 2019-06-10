@@ -49,14 +49,14 @@ void Life::clean() {
         if (this->stronghold->workingFarmers[i] == false) {
             this->stronghold->farmers[i].join();
         }
+        if (this->stronghold->workingMillers[i] == false) {
+            this->stronghold->millers[i].join();
+        }
         if (this->stronghold->workingBowMakers[i] == false) {
             this->stronghold->bowMakers[i].join();
         }
         if (this->stronghold->workingBlacksmiths[i] == false) {
             this->stronghold->blacksmiths[i].join();
-        }
-        if (this->stronghold->workingMillers[i] == false) {
-            this->stronghold->millers[i].join();
         }
     }
 }
@@ -105,7 +105,6 @@ void Life::startLife() {
     std::this_thread::sleep_for(chrono::milliseconds(time));
     printf("Bows Count: %d \nWood Count: %d \nWheat Count: %d \nIron Count: %d\nSwords Count: %d \nFlour Count: %d \nBread Count: %d \n XXXXXXXXXXXXXXX\n",
         this->stronghold->armory.bowsCapacity, this->stronghold->warehouse.woodCapacity,this->stronghold->warehouse.wheatCapacity,this->stronghold->warehouse.ironCapacity, this->stronghold->armory.swordsCapacity,this->stronghold->warehouse.flourCapacity, this->stronghold->granary.breadCapacity);
-    system("cls");
     }   
 }
 
