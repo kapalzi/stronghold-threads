@@ -15,7 +15,7 @@ void Lumberjack::startWorking() {
     }
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        mvprintw(this->workerId,30, "nr %d : %s", this->workerId, "Is recruited                 ");
+        mvprintw(this->workerId,30, "nr %d : %s", this->workerId, "Is recruited                    ");
         refresh();
     }
 }
