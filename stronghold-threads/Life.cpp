@@ -21,18 +21,81 @@ void Life::initNcurses(){
     initscr();
     curs_set(0);
     printw( "Hello World !!!" );
-    
+    int x= i;
+    int y= 0;
     for(int i=0; i<WORKERSCOUNT;i++){
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
-        int x= i;
-        int y= 0;
+        x=i;
+        y=0;
         move(x,y);
-        printw("Drwal nr %d : %s", i, " " );
+        printw("Lumberjack nr %d : %s", i, " " );
 //        refresh();
 //        clrtoeol();
         }
+        
+        {
+        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        x= WORKERSCOUNT*2+i;
+        y= 0;
+        move(x,y);
+        printw("Miner nr %d : %s", i, " " );
+//        refresh();
+//        clrtoeol();
+        }
+
+        {
+        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        x= WORKERSCOUNT*3+i;
+        y= 0;
+        move(x,y);
+        printw("Farmer nr %d : %s", i, " " );
+//        refresh();
+//        clrtoeol();
+        }
+
+        {
+        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        x= WORKERSCOUNT*4+i;
+        y= 0;
+        move(x,y);
+        printw("Miller nr %d : %s", i, " " );
+//        refresh();
+//        clrtoeol();
+        }
+
+        {
+        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        x= WORKERSCOUNT*5+i;
+        y= 0;
+        move(x,y);
+        printw("Bow maker nr %d : %s", i, " " );
+//        refresh();
+//        clrtoeol();
+        }
+
+        {
+        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        x= i;
+        y= 30;
+        move(x,y);
+        printw("Blacksmith nr %d : %s", i, " " );
+//        refresh();
+//        clrtoeol();
+        }
+        {
+        std::lock_guard<std::mutex> output_lock(cout_mutex);
+        x= WORKERSCOUNT*2+i;
+        y= 30;
+        move(x,y);
+        printw("Piekarz nr %d : %s", i, " " );
+//        refresh();
+//        clrtoeol();
+        }
+
     }
+    std::lock_guard<std::mutex> output_lock(cout_mutex);
+    move(63,30);
     getch();
     endwin();
 }
