@@ -20,6 +20,7 @@ void Life::initNcurses(){
     curs_set(0);
     int x= 0;
     int y= 0;
+    
     for(int i=0; i<WORKERSCOUNT;i++){
         {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
