@@ -23,10 +23,11 @@ void Miner::goForResources()
     
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        clrtoeol();
-        move(WORKERSCOUNT+this->workerId,30);
-        printw("nr %d : %s", this->workerId, "Went for resources." );
-        refresh();
+//        clrtoeol();
+//        move(WORKERSCOUNT+this->workerId,30);
+//        printw("nr %d : %s", this->workerId, "Went for resources." );
+        mvprintw(WORKERSCOUNT+this->workerId,30, "Baker nr %d : %s", this->workerId, "Went for resources.");
+//        refresh();
     }
 }
 
@@ -38,10 +39,11 @@ void Miner::workOnProduct()
     
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        clrtoeol();
-        move(WORKERSCOUNT+this->workerId,30);
-        printw("nr %d : %s", this->workerId, "Worked on product." );
-        refresh();
+//        clrtoeol();
+//        move(WORKERSCOUNT+this->workerId,30);
+//        printw("nr %d : %s", this->workerId, "Worked on product." );
+        mvprintw(WORKERSCOUNT+this->workerId,30, "Baker nr %d : %s", this->workerId, "Worked on product.");
+//        refresh();
     }
 
 }
@@ -62,10 +64,11 @@ void Miner::deliverProduct()
                 this->stronghold->granary.unlock();
                 {
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                    clrtoeol();
-                    move(WORKERSCOUNT+this->workerId,30);
-                    printw("nr %d : %s", this->workerId, "Delivered to warehouse." );
-                    refresh();
+//                    clrtoeol();
+//                    move(WORKERSCOUNT+this->workerId,30);
+//                    printw("nr %d : %s", this->workerId, "Delivered to warehouse." );
+                    mvprintw(WORKERSCOUNT+this->workerId,30, "Baker nr %d : %s", this->workerId, "Delivered to warehouse.");
+//                    refresh();
                 }
                 //printf("Zaniesiono żelazo od górnika %d\n",this->workerId);
             } else {

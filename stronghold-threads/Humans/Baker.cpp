@@ -29,10 +29,11 @@ void Baker::goForResources()
             
             {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                move(WORKERSCOUNT+this->workerId,100);
-                clrtoeol();
-                printw("Baker nr %d : %s", this->workerId, "Went for resources." );
-                refresh();
+//                move(WORKERSCOUNT+this->workerId,100);
+////                clrtoeol();
+//                printw("Baker nr %d : %s", this->workerId, "Went for resources." );
+                mvprintw(WORKERSCOUNT+this->workerId, 100, "Baker nr %d : %s", this->workerId, "Went for resources.");
+//                refresh();
             }
             
             //printf("Wzięto make \n");
@@ -50,10 +51,11 @@ void Baker::workOnProduct()
     
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        move(WORKERSCOUNT+this->workerId,100);
-        clrtoeol();
-        printw("Baker nr %d : %s", this->workerId, "Worked on product." );
-        refresh();
+//        move(WORKERSCOUNT+this->workerId,100);
+////        clrtoeol();
+//        printw("Baker nr %d : %s", this->workerId, "Worked on product." );
+        mvprintw(WORKERSCOUNT+this->workerId, 100, "Baker nr %d : %s", this->workerId, "Worked on product.");
+//        refresh();
     }
     
 }
@@ -71,10 +73,11 @@ void Baker::deliverProduct()
             }
             {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                move(WORKERSCOUNT+this->workerId,100);
-                clrtoeol();
-                printw("Baker nr %d : %s", this->workerId, "Delivered to granary." );
-                refresh();
+//                move(WORKERSCOUNT+this->workerId,100);
+////                clrtoeol();
+//                printw("Baker nr %d : %s", this->workerId, "Delivered to granary." );
+                mvprintw(WORKERSCOUNT+this->workerId, 100, "Baker nr %d : %s", this->workerId, "Delivered to granary.");
+//                refresh();
             }
             this->stronghold->granary.unlock();
             //printf("Zaniesiono chleb \n");
