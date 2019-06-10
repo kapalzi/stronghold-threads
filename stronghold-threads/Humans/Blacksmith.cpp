@@ -68,9 +68,6 @@ void Blacksmith::deliverProduct()
                 if (this->stronghold->granary.canGetBread()) {
                     this->stronghold->granary.getBreads(1);
                 }
-                if (this->stronghold->armory.swordsCapacity >= 50) {
-                    this->stronghold->swordsReady.notify_one();
-                }
                 this->stronghold->armory.unlock();
                 this->stronghold->granary.unlock();
                 {
@@ -79,6 +76,9 @@ void Blacksmith::deliverProduct()
                     move(this->workerId,130);
                     printw("nr %d : %s", this->workerId, "Delivered product to armory.          " );
                     refresh();
+                }
+                if (this->stronghold->armory.swordsCapacity >= 35) {
+                    this->stronghold->swordsReady.notify_one();
                 }
             } else {
                 this->stronghold->armory.unlock();

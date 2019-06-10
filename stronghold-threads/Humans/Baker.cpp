@@ -62,15 +62,15 @@ void Baker::deliverProduct()
     if (this->stronghold->granary.try_lock()) {
         if (this->stronghold->granary.canStoreBreads(3)) {
             this->stronghold->granary.storeBreads(3);
-            if (this->stronghold->granary.breadCapacity >= 100) {
-                this->stronghold->breadsReady.notify_one();
-            }
             {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
                 mvprintw(WORKERSCOUNT+this->workerId, 130, "nr %d : %s", this->workerId, "Delivered to granary.         ");
                 refresh();
             }
             this->stronghold->granary.unlock();
+            if (this->stronghold->granary.breadCapacity >= 100) {
+                this->stronghold->breadsReady.notify_one();
+            }
             //printf("Zaniesiono chleb \n");
         } else {
             this->stronghold->granary.unlock();

@@ -25,7 +25,6 @@ class Life {
 public:
     Stronghold *stronghold;
     thread recruiter;
-    bool finish = false;
 
     Life();
     void initLife();

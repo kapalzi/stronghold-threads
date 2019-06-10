@@ -21,6 +21,13 @@ void BowMaker::startWorking() {
         this -> workOnProduct();
         this -> deliverProduct();
     }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        
+        move(WORKERSCOUNT*4+this->workerId,30);
+        printw("nr %d : %s", this->workerId, "Is recruited.                " );
+        refresh();
+    }
 }
 
 void BowMaker::goForResources()
@@ -75,9 +82,6 @@ void BowMaker::deliverProduct()
                 if (this->stronghold->granary.canGetBread()) {
                     this->stronghold->granary.getBreads(1);
                 }
-                if (this->stronghold->armory.bowsCapacity >= 50) {
-                    this->stronghold->bowsReady.notify_one();
-                }
                 
                 this->stronghold->armory.unlock();
                 this->stronghold->granary.unlock();
@@ -87,7 +91,10 @@ void BowMaker::deliverProduct()
                     move(WORKERSCOUNT*4+this->workerId,30);
                     printw("nr %d : %s", this->workerId, "Delivered product to armory.          " );
                     refresh();
-    }
+                }
+                if (this->stronghold->armory.bowsCapacity >= 35) {
+                    this->stronghold->bowsReady.notify_one();
+                }
             } else {
                 this->stronghold->armory.unlock();
                 this->stronghold->granary.unlock();

@@ -13,6 +13,13 @@ void Farmer::startWorking() {
         this -> workOnProduct();
         this -> deliverProduct();
     }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        
+        move(WORKERSCOUNT*2+this->workerId,30);
+        printw("nr %d : %s", this->workerId, "Is recruited            " );
+        refresh();
+    }
 }
 
 void Farmer::goForResources()

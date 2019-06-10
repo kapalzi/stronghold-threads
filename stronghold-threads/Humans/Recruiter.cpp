@@ -23,17 +23,19 @@ void Recruiter::startWorking() {
         this->stronghold->bowsReady.wait(locker);
         this->stronghold->swordsReady.wait(locker);
         this->stronghold->breadsReady.wait(locker);
-        for (int i = 0; i<20; i++) {
+        for (int i = 0; i<5; i++) {
             this->stronghold->workingBowMakers[i] = false;
             this->stronghold->workingMiners[i] = false;
             this->stronghold->workingBakers[i] = false;
             this->stronghold->workingFarmers[i] = false;
+            this->stronghold->workingMillers[i] = false;
             this->stronghold->workingLumberjacks[i] = false;
+            this->stronghold->workingBlacksmiths[i] = false;
         }
-        this->stronghold->armory.getBows(50);
-        this->stronghold->armory.getSwords(50);
+        this->stronghold->armory.getBows(35);
+        this->stronghold->armory.getSwords(35);
         this->stronghold->granary.getBreads(100);
-        printf("Recruited \n");
+//        printf("Recruited \n");
         locker.unlock();
     }
 }

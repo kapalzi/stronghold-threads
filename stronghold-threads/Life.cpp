@@ -29,7 +29,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Lumberjack" );
 //        refresh();
-//          
+//
         }
         
         {
@@ -39,7 +39,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Miner" );
 //        refresh();
-//          
+//
         }
 
         {
@@ -49,7 +49,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Farmer" );
 //        refresh();
-//          
+//
         }
 
         {
@@ -59,7 +59,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Miller");
 //        refresh();
-//          
+//
         }
 
         {
@@ -69,7 +69,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Bow maker" );
 //        refresh();
-//          
+//
         }
 
         {
@@ -79,7 +79,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Blacksmith " );
 //        refresh();
-//          
+//
         }
         {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
@@ -88,7 +88,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Baker" );
 //        refresh();
-//          
+//
         }
     }
     {
@@ -149,7 +149,7 @@ void Life::initNcurses(){
 //    getch();
 //    endwin();
 }
-
+atomic_bool finish;
 void Life::initLife() {
     
     initNcurses();
@@ -172,9 +172,18 @@ void Life::initLife() {
         this->stronghold->millers[i] = thread([=] {this->startMiller(i);});
         this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
     }
-    this->startLife();
-    //    thread recruiter = thread([=] {this->startRecruiter(0);});
+     finish = false;
+        while(!finish) {
+            this->startLife();
+//            if (std::cin.get() == 's') {
+//                finish = true;
+//            } else {
+//
+//            }
+        }
     
+        std::cin.get();
+        endwin();
 }
 
 void Life::clean() {
@@ -191,8 +200,6 @@ void Life::clean() {
         
             this->stronghold->blacksmiths[i].join();
         
-            this->stronghold->millers[i].join();
-        
             this->stronghold->bakers[i].join();
     }
     recruiter.join();
@@ -200,18 +207,7 @@ void Life::clean() {
 }
 
 void Life::startLife() {
-
-    while(!finish) {
-        if (std::cin.get() == 's') {
-            finish = true;
-        }
-    }
-
-    std::cin.get();
-    endwin();
-
         for (int i = 0; i < WORKERSCOUNT; ++i) {
-            
             if (this->stronghold->workingMiners[i] == false) {
                 this->stronghold->miners[i].join();
                 this->stronghold->workingMiners[i] = true;
@@ -248,12 +244,6 @@ void Life::startLife() {
                 this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
             }
         }
-        
-    signed int time = Helper::getPrintfTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
-    printf("Bows Count: %d \nWood Count: %d \nWheat Count: %d \nIron Count: %d\nSwords Count: %d \nFlour Count: %d \nBread Count: %d \n XXXXXXXXXXXXXXX\n",
-        this->stronghold->armory.bowsCapacity, this->stronghold->warehouse.woodCapacity,this->stronghold->warehouse.wheatCapacity,this->stronghold->warehouse.ironCapacity, this->stronghold->armory.swordsCapacity,this->stronghold->warehouse.flourCapacity, this->stronghold->granary.breadCapacity);
-    
 }
 
 void Life::startMiner(int id) {
