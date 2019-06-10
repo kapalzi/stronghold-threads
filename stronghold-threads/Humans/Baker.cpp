@@ -14,6 +14,11 @@ void Baker::startWorking() {
         this -> workOnProduct();
         this -> deliverProduct();
     }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+this->workerId,130, "nr %d : %s", this->workerId, "Is recruited                 ");
+        refresh();
+    }
 }
 
 void Baker::goForResources()

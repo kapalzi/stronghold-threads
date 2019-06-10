@@ -13,6 +13,11 @@ void Lumberjack::startWorking() {
         this -> workOnProduct();
         this -> deliverProduct();
     }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(this->workerId,30, "nr %d : %s", this->workerId, "Is recruited                 ");
+        refresh();
+    }
 }
 
 void Lumberjack::goForResources()
