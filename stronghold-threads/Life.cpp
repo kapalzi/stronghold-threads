@@ -29,7 +29,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Lumberjack" );
 //        refresh();
-//        clrtoeol();
+//          
         }
         
         {
@@ -39,7 +39,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Miner" );
 //        refresh();
-//        clrtoeol();
+//          
         }
 
         {
@@ -49,7 +49,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Farmer" );
 //        refresh();
-//        clrtoeol();
+//          
         }
 
         {
@@ -59,7 +59,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Miller");
 //        refresh();
-//        clrtoeol();
+//          
         }
 
         {
@@ -69,7 +69,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Bow maker" );
 //        refresh();
-//        clrtoeol();
+//          
         }
 
         {
@@ -79,7 +79,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Blacksmith " );
 //        refresh();
-//        clrtoeol();
+//          
         }
         {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
@@ -88,7 +88,7 @@ void Life::initNcurses(){
         move(x,y);
         printw("Baker" );
 //        refresh();
-//        clrtoeol();
+//          
         }
     }
     {

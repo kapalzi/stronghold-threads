@@ -27,7 +27,7 @@ void Blacksmith::goForResources()
             this->stronghold->warehouse.unlock();
              {
                 std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                clrtoeol();
+                  
                 move(this->workerId,130);
                 printw("nr %d : %s", this->workerId, "Went for resources to warehouse." );
                 refresh();
@@ -48,7 +48,7 @@ void Blacksmith::workOnProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        clrtoeol();
+          
         move(this->workerId,130);
         printw("nr %d : %s", this->workerId, "Worked on product" );
         refresh();
@@ -75,7 +75,7 @@ void Blacksmith::deliverProduct()
                 this->stronghold->granary.unlock();
                 {
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                    clrtoeol();
+                      
                     move(this->workerId,130);
                     printw("nr %d : %s", this->workerId, "Delivered product to armory." );
                     refresh();

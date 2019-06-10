@@ -23,9 +23,9 @@ void Lumberjack::goForResources()
     
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        clrtoeol();
+          
         move(this->workerId,30);
-        printw("nr %d : %s", this->workerId, "Went for resources to warehouse.              Blacksmith" );
+        printw("nr %d : %s", this->workerId, "Went for resources.                  " );
         refresh();
     }
     
@@ -38,9 +38,9 @@ void Lumberjack::workOnProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        clrtoeol();
+          
         move(this->workerId,30);
-        printw("nr %d : %s", this->workerId, "Worked on product                             Blacksmith" );
+        printw("nr %d : %s", this->workerId, "Worked on product.                     " );
         refresh();
     }
 
@@ -62,9 +62,9 @@ void Lumberjack::deliverProduct()
                 this->stronghold->granary.unlock();
                 {
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                    clrtoeol();
+                      
                     move(this->workerId,30);
-                    printw("nr %d : %s", this->workerId, "Delivered product to armory.                  Blacksmith" );
+                    printw("nr %d : %s", this->workerId, "Delivered product to warehouse." );
                     refresh();
                 }
                 //printf("Zaniesiono drewno \n");

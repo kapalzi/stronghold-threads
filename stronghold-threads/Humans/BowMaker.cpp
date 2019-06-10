@@ -35,7 +35,7 @@ void BowMaker::goForResources()
             this->stronghold->warehouse.unlock();
             {
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                    clrtoeol();
+                      
                     move(WORKERSCOUNT*4+this->workerId,30);
                     printw("nr %d : %s", this->workerId, "Went for resources to warehouse." );
                     refresh();
@@ -55,7 +55,7 @@ void BowMaker::workOnProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        clrtoeol();
+          
         move(WORKERSCOUNT*4+this->workerId,30);
         printw("nr %d : %s", this->workerId, "Worked on product." );
         refresh();
@@ -83,7 +83,7 @@ void BowMaker::deliverProduct()
                 this->stronghold->granary.unlock();
                 {
                     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                    clrtoeol();
+                      
                     move(WORKERSCOUNT*4+this->workerId,30);
                     printw("nr %d : %s", this->workerId, "Delivered product to armory." );
                     refresh();
