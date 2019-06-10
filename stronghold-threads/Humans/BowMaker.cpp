@@ -8,6 +8,7 @@
 
 #include "BowMaker.hpp"
 #include "../Helper.h"
+#include <ncurses.h>
 
 BowMaker::BowMaker() {
     
@@ -32,7 +33,13 @@ void BowMaker::goForResources()
         if (this->stronghold->warehouse.canGetWood()) {
             this->stronghold->warehouse.getWood();
             this->stronghold->warehouse.unlock();
-            //printf("Wzięto drewno \n");
+            {
+                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                    clrtoeol();
+                    move(WORKERSCOUNT*4+this->workerId,30);
+                    printw("nr %d : %s", this->workerId, "Went for resources to warehouse." );
+                    refresh();
+            }
         } else {
             this->stronghold->warehouse.unlock();
         }
@@ -46,6 +53,13 @@ void BowMaker::workOnProduct()
     std::this_thread::sleep_for(chrono::milliseconds(time));
     std::this_thread::sleep_for(chrono::milliseconds(time));
     std::this_thread::sleep_for(chrono::milliseconds(time));
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        clrtoeol();
+        move(WORKERSCOUNT*4+this->workerId,30);
+        printw("nr %d : %s", this->workerId, "Worked on product." );
+        refresh();
+    }
     
 }
 void BowMaker::deliverProduct()
@@ -67,7 +81,13 @@ void BowMaker::deliverProduct()
                 
                 this->stronghold->armory.unlock();
                 this->stronghold->granary.unlock();
-                //printf("Zaniesiono łuk \n");
+                {
+                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                    clrtoeol();
+                    move(WORKERSCOUNT*4+this->workerId,30);
+                    printw("nr %d : %s", this->workerId, "Delivered product to armory." );
+                    refresh();
+    }
             } else {
                 this->stronghold->armory.unlock();
                 this->stronghold->granary.unlock();
