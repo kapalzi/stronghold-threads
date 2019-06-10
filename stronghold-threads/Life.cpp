@@ -36,7 +36,7 @@ void Life::initNcurses(){
         
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
-        x= WORKERSCOUNT*2+i;
+        x= WORKERSCOUNT+i;
         y= 0;
         move(x,y);
         printw("Miner nr %d : %s", i, " " );
@@ -46,7 +46,7 @@ void Life::initNcurses(){
 
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
-        x= WORKERSCOUNT*3+i;
+        x= WORKERSCOUNT*2+i;
         y= 0;
         move(x,y);
         printw("Farmer nr %d : %s", i, " " );
@@ -56,7 +56,7 @@ void Life::initNcurses(){
 
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
-        x= WORKERSCOUNT*4+i;
+        x= WORKERSCOUNT*3+i;
         y= 0;
         move(x,y);
         printw("Miller nr %d : %s", i, " " );
@@ -66,7 +66,7 @@ void Life::initNcurses(){
 
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
-        x= WORKERSCOUNT*5+i;
+        x= WORKERSCOUNT*4+i;
         y= 0;
         move(x,y);
         printw("Bow maker nr %d : %s", i, " " );
@@ -85,7 +85,7 @@ void Life::initNcurses(){
         }
         {
         std::lock_guard<std::mutex> output_lock(cout_mutex);
-        x= WORKERSCOUNT*2+i;
+        x= WORKERSCOUNT+i;
         y= 30;
         move(x,y);
         printw("Piekarz nr %d : %s", i, " " );

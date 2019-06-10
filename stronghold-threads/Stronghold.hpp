@@ -12,7 +12,7 @@
 #include "Stocks/Granary.hpp"
 #include <thread>
 #include "Humans/Miner.h"
-#define WORKERSCOUNT 20
+#define WORKERSCOUNT 10
 
 using namespace std;
 //class  Miner;
