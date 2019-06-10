@@ -92,68 +92,66 @@ void Life::initNcurses(){
 //        refresh();
 //        clrtoeol();
         }
-
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(64,100);
+    move(20,100);
     printw("Recruiter: %s", " " );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(65,100);
+    move(22,100);
     printw("Granary " );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(66,100);
+    move(23,100);
     printw("Bread:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(67,100);
+    move(25,100);
     printw("Armory" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(68,100);
+    move(26,100);
     printw("Bows:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(69,100);
+    move(27,100);
     printw("Swords:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(70,100);
+    move(29,100);
     printw("Warehouse" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(71,100);
+    move(30,100);
     printw("Iron:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(72,100);
+    move(31,100);
     printw("Wood:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(73,100);
+    move(32,100);
     printw("Wheat:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(cout_mutex);
-    move(74,100);
+    move(33,100);
     printw("Flour:" );
     }
     getch();
     endwin();
-    }
-    
 }
+
 void Life::initLife() {
     
     initNcurses();
