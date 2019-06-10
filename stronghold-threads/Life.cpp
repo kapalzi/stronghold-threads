@@ -27,7 +27,7 @@ void Life::initNcurses(){
         x=i;
         y=0;
         move(x,y);
-        printw("Lumberjack nr %d : %s", i, " " );
+        printw("Lumberjack" );
 //        refresh();
 //        clrtoeol();
         }
@@ -37,7 +37,7 @@ void Life::initNcurses(){
         x= WORKERSCOUNT+i;
         y= 0;
         move(x,y);
-        printw("Miner nr %d : %s", i, " " );
+        printw("Miner" );
 //        refresh();
 //        clrtoeol();
         }
@@ -47,7 +47,7 @@ void Life::initNcurses(){
         x= WORKERSCOUNT*2+i;
         y= 0;
         move(x,y);
-        printw("Farmer nr %d : %s", i, " " );
+        printw("Farmer" );
 //        refresh();
 //        clrtoeol();
         }
@@ -57,7 +57,7 @@ void Life::initNcurses(){
         x= WORKERSCOUNT*3+i;
         y= 0;
         move(x,y);
-        printw("Miller nr %d : %s", i, " " );
+        printw("Miller");
 //        refresh();
 //        clrtoeol();
         }
@@ -67,7 +67,7 @@ void Life::initNcurses(){
         x= WORKERSCOUNT*4+i;
         y= 0;
         move(x,y);
-        printw("Bow maker nr %d : %s", i, " " );
+        printw("Bow maker" );
 //        refresh();
 //        clrtoeol();
         }
@@ -77,7 +77,7 @@ void Life::initNcurses(){
         x= i;
         y= 100;
         move(x,y);
-        printw("Blacksmith nr %d : %s", i, " " );
+        printw("Blacksmith " );
 //        refresh();
 //        clrtoeol();
         }
@@ -86,7 +86,7 @@ void Life::initNcurses(){
         x= WORKERSCOUNT+i;
         y= 100;
         move(x,y);
-        printw("Baker nr %d : %s", i, " " );
+        printw("Baker" );
 //        refresh();
 //        clrtoeol();
         }
@@ -94,7 +94,7 @@ void Life::initNcurses(){
     {
     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(20,100);
-    printw("Recruiter: %s", " " );
+    printw("Recruiter:" );
     }
     {
     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
