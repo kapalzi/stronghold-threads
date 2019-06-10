@@ -9,6 +9,7 @@
 #include "Life.hpp"
 #include <iostream>
 #include "Helper.h"
+#include <ncurses.h>
 
 Life::Life() {
     stronghold = new Stronghold();
@@ -40,25 +41,24 @@ void Life::initLife() {
 
 void Life::clean() {
     for (int i = 0; i < WORKERSCOUNT; ++i) {
-        if (this->stronghold->workingMiners[i] == false) {
             this->stronghold->miners[i].join();
-        }
-        if (this->stronghold->workingLumberjacks[i] == false) {
+        
             this->stronghold->lumberjacks[i].join();
-        }
-        if (this->stronghold->workingFarmers[i] == false) {
+        
             this->stronghold->farmers[i].join();
-        }
-        if (this->stronghold->workingMillers[i] == false) {
+        
             this->stronghold->millers[i].join();
-        }
-        if (this->stronghold->workingBowMakers[i] == false) {
+        
             this->stronghold->bowMakers[i].join();
-        }
-        if (this->stronghold->workingBlacksmiths[i] == false) {
+        
             this->stronghold->blacksmiths[i].join();
-        }
+        
+            this->stronghold->millers[i].join();
+        
+            this->stronghold->bakers[i].join();
     }
+    recruiter.join();
+    
 }
 
 void Life::startLife() {
@@ -101,6 +101,7 @@ void Life::startLife() {
                 this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
             }
         }
+        
     signed int time = Helper::getPrintfTime();
     std::this_thread::sleep_for(chrono::milliseconds(time));
     printf("Bows Count: %d \nWood Count: %d \nWheat Count: %d \nIron Count: %d\nSwords Count: %d \nFlour Count: %d \nBread Count: %d \n XXXXXXXXXXXXXXX\n",
