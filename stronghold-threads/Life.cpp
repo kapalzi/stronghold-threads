@@ -146,15 +146,17 @@ void Life::initNcurses(){
     move(33,100);
     printw("Flour:" );
     }
-//    getch();
-//    endwin();
 }
 atomic_bool finish;
+thread tend;
+
 void Life::initLife() {
     
     initNcurses();
     
     recruiter = thread([=] {this->startRecruiter(0);});
+    tend = thread([=] {this->waitForFinish();});
+    
     for (int i = 0; i < WORKERSCOUNT; ++i) {
         this->stronghold->workingMiners[i] = true;
         this->stronghold->workingLumberjacks[i] = true;
@@ -173,25 +175,30 @@ void Life::initLife() {
         this->stronghold->bakers[i] = thread([=] {this->startBaker(i);});
     }
     finish = false;
-    std::cin.get();
-        while(!finish) {
-            this->startLife();
-            if (std::cin.get() == 's') {
-                {
-                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                    mvprintw(WORKERSCOUNT+30, 130, "KURWA");
-                    refresh();
-                }
-                finish = true;
-            }
-        }
+    
+    while(!finish) {
+        this->startLife();
+    }
         clean();
     
         endwin();
 }
 
 void Life::clean() {
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+30, 130, "stop");
+        refresh();
+    }
     for (int i = 0; i < WORKERSCOUNT; ++i) {
+            this->stronghold->workingBowMakers[i] = false;
+            this->stronghold->workingMiners[i] = false;
+            this->stronghold->workingBakers[i] = false;
+            this->stronghold->workingFarmers[i] = false;
+            this->stronghold->workingMillers[i] = false;
+            this->stronghold->workingLumberjacks[i] = false;
+            this->stronghold->workingBlacksmiths[i] = false;
+        
             this->stronghold->miners[i].join();
         
             this->stronghold->lumberjacks[i].join();
@@ -207,18 +214,13 @@ void Life::clean() {
             this->stronghold->bakers[i].join();
     }
     recruiter.join();
-    
+    tend.join();
 }
 
 void Life::startLife() {
 
         for (int i = 0; i < WORKERSCOUNT; ++i) {
             if (this->stronghold->workingMiners[i] == false) {
-                {
-                    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-                    mvprintw(WORKERSCOUNT+35, 130, "chuj %i",i);
-                    refresh();
-                }
                 this->stronghold->miners[i].join();
                 this->stronghold->workingMiners[i] = true;
                 this->stronghold->miners[i] = thread([=] {this->startMiner(i);});
@@ -310,5 +312,11 @@ void Life::startBaker(int id) {
     baker->workerId = id;
     baker->stronghold = this->stronghold;
     baker->startWorking();
+}
+
+void Life::waitForFinish() {
+    while (getch() != '1') {
+        finish = true;
+    }
 }
 

@@ -35,7 +35,7 @@ void Recruiter::startWorking() {
         this->stronghold->armory.getBows(35);
         this->stronghold->armory.getSwords(35);
         this->stronghold->granary.getBreads(100);
-//        printf("Recruited \n");
+//        printf("gone \n");
         locker.unlock();
     }
 }

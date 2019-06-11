@@ -16,7 +16,7 @@ void Baker::startWorking() {
     }
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        mvprintw(WORKERSCOUNT+this->workerId,130, "nr %d : %s", this->workerId, "Is recruited                 ");
+        mvprintw(WORKERSCOUNT+this->workerId,130, "nr %d : %s", this->workerId, "Is gone                 ");
         refresh();
     }
 }

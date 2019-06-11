@@ -39,6 +39,7 @@ public:
     void startRecruiter(int id);
     void startMiller(int id);
     void startBaker(int id);
+    void waitForFinish();
     
 
 };

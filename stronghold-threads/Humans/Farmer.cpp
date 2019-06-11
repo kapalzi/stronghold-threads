@@ -17,7 +17,7 @@ void Farmer::startWorking() {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         
         move(WORKERSCOUNT*2+this->workerId,30);
-        printw("nr %d : %s", this->workerId, "Is recruited            " );
+        printw("nr %d : %s", this->workerId, "Is gone            " );
         refresh();
     }
 }

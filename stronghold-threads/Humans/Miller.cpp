@@ -15,7 +15,7 @@ void Miller::startWorking() {
     }
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        mvprintw(WORKERSCOUNT*3+this->workerId,30, "nr %d : %s", this->workerId, "Is recruited                 ");
+        mvprintw(WORKERSCOUNT*3+this->workerId,30, "nr %d : %s", this->workerId, "Is gone                 ");
         refresh();
     }
 }
