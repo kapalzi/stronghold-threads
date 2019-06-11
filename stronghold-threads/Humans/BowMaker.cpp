@@ -23,14 +23,14 @@ void BowMaker::startWorking() {
     }
      {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        mvprintw(WORKERSCOUNT*4+this->workerId,30, "nr %d : %s", this->workerId, "Is gone                 ");
+        mvprintw(WORKERSCOUNT*4+this->workerId,30, "nr %d : %s", this->workerId, "Is gone                        ");
         refresh();
     }
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         
         move(WORKERSCOUNT*4+this->workerId,30);
-        printw("nr %d : %s", this->workerId, "Is gone.                " );
+        printw("nr %d : %s", this->workerId, "Is gone                       " );
         refresh();
     }
 }

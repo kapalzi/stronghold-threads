@@ -15,7 +15,7 @@ void Miner::startWorking() {
     }
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-        mvprintw(WORKERSCOUNT+this->workerId,30, "nr %d : %s", this->workerId, "Is gone                 ");
+        mvprintw(WORKERSCOUNT+this->workerId,30, "nr %d : %s", this->workerId, "Is gone                        ");
         refresh();
     }
 }
