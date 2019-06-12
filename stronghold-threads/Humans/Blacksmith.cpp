@@ -24,7 +24,16 @@ void Blacksmith::goForResources()
 {
     //    Human:goForResources();
     signed int time = Helper::getRandomTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
+    int wait = time/10;
+    for (int i = 0; i<=10; i++) {
+        std::this_thread::sleep_for(chrono::milliseconds(wait));
+        {
+            std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+            move(this->workerId,115);
+            printw("%d %%  ", i*10);
+            refresh();
+        }
+    }
     
     if (this->stronghold->warehouse.try_lock()) {
         if (this->stronghold->warehouse.canGetIron()) {
@@ -48,9 +57,18 @@ void Blacksmith::workOnProduct()
 {
     //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
-    std::this_thread::sleep_for(chrono::milliseconds(time));
-    std::this_thread::sleep_for(chrono::milliseconds(time));
+//    std::this_thread::sleep_for(chrono::milliseconds(time));
+//    std::this_thread::sleep_for(chrono::milliseconds(time));
+    int wait = time/10;
+    for (int i = 0; i<=10; i++) {
+        std::this_thread::sleep_for(chrono::milliseconds(wait));
+        {
+            std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+            move(this->workerId,115);
+            printw("%d %%  ", i*10);
+            refresh();
+        }
+    }
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
           

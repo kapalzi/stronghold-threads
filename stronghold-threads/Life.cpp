@@ -93,11 +93,6 @@ void Life::initNcurses(){
     }
     {
     std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
-    move(20,100);
-    printw("Recruiter:" );
-    }
-    {
-    std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
     move(22,100);
     printw("Granary " );
     }
@@ -218,7 +213,41 @@ void Life::clean() {
 }
 
 void Life::startLife() {
-
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+13, 130, "%d / %d     ", this->stronghold->granary.breadCapacity, this->stronghold->granary.breadMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+16, 130, "%d / %d     ", this->stronghold->armory.bowsCapacity, this->stronghold->armory.bowsMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+17, 130, "%d / %d     ", this->stronghold->armory.swordsCapacity, this->stronghold->armory.swordsMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+20, 130, "%d / %d     ", this->stronghold->warehouse.ironCapacity, this->stronghold->warehouse.ironMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+21, 130, "%d / %d     ", this->stronghold->warehouse.woodCapacity, this->stronghold->warehouse.woodMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+22, 130, "%d / %d     ", this->stronghold->warehouse.wheatCapacity, this->stronghold->warehouse.wheatMaxCapacity);
+        refresh();
+    }
+    {
+        std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+        mvprintw(WORKERSCOUNT+23, 130, "%d / %d     ", this->stronghold->warehouse.flourCapacity, this->stronghold->warehouse.flourMaxCapacity);
+        refresh();
+    }
         for (int i = 0; i < WORKERSCOUNT; ++i) {
             if (this->stronghold->workingMiners[i] == false) {
                 this->stronghold->miners[i].join();

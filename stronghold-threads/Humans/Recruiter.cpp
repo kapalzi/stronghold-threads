@@ -22,7 +22,7 @@ void Recruiter::startWorking() {
         unique_lock<mutex> locker(this->stronghold->armory);
         this->stronghold->bowsReady.wait(locker);
         this->stronghold->swordsReady.wait(locker);
-        this->stronghold->breadsReady.wait(locker);
+        this->stronghold->breadsReady.wait(locker); 
         for (int i = 0; i<5; i++) {
             this->stronghold->workingBowMakers[i] = false;
             this->stronghold->workingMiners[i] = false;

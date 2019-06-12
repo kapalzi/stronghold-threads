@@ -24,22 +24,40 @@ void Lumberjack::goForResources()
 {
 //    Human:goForResources();
     signed int time = Helper::getRandomTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
-    
+    int wait = time/10;
+    for (int i = 0; i<=10; i++) {
+        std::this_thread::sleep_for(chrono::milliseconds(wait));
+        {
+            std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+            move(this->workerId,15);
+            printw("%d %%  ", i*10);
+            refresh();
+        }
+    }
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
           
         move(this->workerId,30);
         printw("nr %d : %s", this->workerId, "Went for resources.                  " );
         refresh();
-    }
-    
+    }    
 }
 
 void Lumberjack::workOnProduct()
 {
 //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
+        int wait = time/10;
+        for (int i = 0; i<=10; i++) {
+            std::this_thread::sleep_for(chrono::milliseconds(wait));
+            {
+                std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+                move(this->workerId,15);
+                printw("%d %%  ", i*10);
+                refresh();
+            }
+        }
+    
     std::this_thread::sleep_for(chrono::milliseconds(time));
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
@@ -49,12 +67,22 @@ void Lumberjack::workOnProduct()
         refresh();
     }
 
+
 }
 void Lumberjack::deliverProduct()
 {
 //    Human:deliverProduct();
     signed int time = Helper::getRandomTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
+    int wait = time/10;
+    for (int i = 0; i<=10; i++) {
+        std::this_thread::sleep_for(chrono::milliseconds(wait));
+        {
+            std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+            move(this->workerId,15);
+            printw("%d %%  ", i*10);
+            refresh();
+        }
+    }
     
     if (this->stronghold->warehouse.try_lock()) {
         if (this->stronghold->granary.try_lock()) {

@@ -26,7 +26,17 @@ void Farmer::goForResources()
 {
 //    Human:goForResources();
     signed int time = Helper::getRandomTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
+    int wait = time/10;
+    for (int i = 0; i<=10; i++) {
+        std::this_thread::sleep_for(chrono::milliseconds(wait));
+        {
+            std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+            move(WORKERSCOUNT*2+this->workerId,15);
+            printw("%d %%  ", i*10);
+            refresh();
+        }
+    }
+
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
         mvprintw(WORKERSCOUNT*2+this->workerId,30, "nr %d : %s", this->workerId, "Went for resources.       ");
@@ -38,9 +48,18 @@ void Farmer::workOnProduct()
 {
 //    Human:workOnProduct();
     signed int time = Helper::getRandomTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
-    std::this_thread::sleep_for(chrono::milliseconds(time));
-    std::this_thread::sleep_for(chrono::milliseconds(time));
+//    std::this_thread::sleep_for(chrono::milliseconds(time));
+//    std::this_thread::sleep_for(chrono::milliseconds(time));
+    int wait = time/10;
+    for (int i = 0; i<=10; i++) {
+        std::this_thread::sleep_for(chrono::milliseconds(wait));
+        {
+            std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+            move(WORKERSCOUNT*2+this->workerId,15);
+            printw("%d %%  ", i*10);
+            refresh();
+        }
+    }
     
     {
         std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
@@ -55,7 +74,16 @@ void Farmer::deliverProduct()
 {
 //    Human:deliverProduct();
     signed int time = Helper::getRandomTime();
-    std::this_thread::sleep_for(chrono::milliseconds(time));
+    int wait = time/10;
+    for (int i = 0; i<=10; i++) {
+        std::this_thread::sleep_for(chrono::milliseconds(wait));
+        {
+            std::lock_guard<std::mutex> output_lock(this->stronghold->cout_mutex);
+            move(WORKERSCOUNT*2+this->workerId,15);
+            printw("%d %%  ", i*10);
+            refresh();
+        }
+    }
     
     if (this->stronghold->warehouse.try_lock()) {
         if (this->stronghold->granary.try_lock()) {

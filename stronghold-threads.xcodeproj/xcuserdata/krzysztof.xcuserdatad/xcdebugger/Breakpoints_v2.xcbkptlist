@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Miner.cpp"
-            timestampString = "581905589.669222"
+            timestampString = "581956503.38993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "11"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Miner.cpp"
-            timestampString = "581905589.670143"
+            timestampString = "581956503.390213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "Miner::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/BowMaker.cpp"
-            timestampString = "581905589.67084"
+            timestampString = "581956503.390448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "BowMaker::workOnProduct()"
-            landmarkType = "7">
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/BowMaker.cpp"
-            timestampString = "581905589.671427"
+            timestampString = "581956503.391808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "BowMaker::workOnProduct()"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "BowMaker::goForResources()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Stocks/Armory.cpp"
-            timestampString = "581905589.671947"
+            timestampString = "581943935.540002"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/BowMaker.cpp"
-            timestampString = "581905589.672291"
+            timestampString = "581956503.392915"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "BowMaker::workOnProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Baker.cpp"
-            timestampString = "581905589.672972"
+            timestampString = "581956503.393883"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "Baker::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Baker.cpp"
-            timestampString = "581905589.673496"
+            timestampString = "581956503.3939919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "Baker::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Miner.cpp"
-            timestampString = "581905589.6738859"
+            timestampString = "581956503.394098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "Miner::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Miner.cpp"
-            timestampString = "581905589.674642"
+            timestampString = "581956503.394271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "Miner::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Lumberjack.cpp"
-            timestampString = "581905589.6752729"
+            timestampString = "581956503.3944401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "Lumberjack::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Lumberjack.cpp"
-            timestampString = "581905589.6754611"
+            timestampString = "581956503.394537"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "Lumberjack::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "stronghold-threads/Humans/Lumberjack.cpp"
-            timestampString = "581905589.675566"
+            timestampString = "581956503.394622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "Lumberjack::deliverProduct()"
             landmarkType = "7">
          </BreakpointContent>
